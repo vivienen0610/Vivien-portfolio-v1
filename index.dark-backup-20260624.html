@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI 工具創新應用｜作品集</title>
+<style>
+  :root{
+    --bg:#0e1117; --panel:#161b22; --panel-2:#1c2330; --line:#2a3340;
+    --text:#e6edf3; --muted:#9aa7b4; --accent:#5b8cff; --accent-2:#43d6a3;
+    --warn:#f0a04b; --radius:14px; --maxw:1080px;
+    font-family:-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{line-height:1.25;margin:0 0 12px}
+  h1{font-size:32px}
+  h2{font-size:23px}
+  .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.08em;font-size:13px;text-transform:uppercase;margin-bottom:8px}
+  .muted{color:var(--muted)}
+  .lead{font-size:18px;color:var(--muted);max-width:720px}
+  .hl{color:var(--accent-2);font-weight:600}
+
+  /* HERO */
+  .hero{padding:76px 0 52px;background:radial-gradient(1200px 400px at 70% -10%,rgba(91,140,255,.18),transparent)}
+  .stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;min-width:150px;flex:1}
+  .stat .num{font-size:26px;font-weight:700;color:var(--accent-2)}
+  .stat .lbl{font-size:13px;color:var(--muted)}
+
+  /* 能力地圖 / 系統架構 */
+  .pipe{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:24px}
+  .pipe .stepwrap{display:flex;align-items:center;gap:10px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:150px}
+  .step .k{font-size:12px;color:var(--accent);font-weight:600}
+  .step .t{font-weight:600;margin:4px 0 2px}
+  .step .d{font-size:12px;color:var(--muted)}
+  .pipe .arrow{color:var(--muted);font-size:18px}
+  .orch{margin-top:14px;background:linear-gradient(180deg,rgba(91,140,255,.16),rgba(67,214,163,.08));border:1px solid var(--accent);border-radius:12px;padding:16px 18px}
+  .orch .t{font-weight:700;color:var(--text)}
+  .orch .d{font-size:13px;color:var(--muted);margin-top:4px}
+
+  /* 方法論 */
+  .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:18px}
+  .method .m{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .method .m b{color:var(--accent)}
+  .method .m p{font-size:13px;color:var(--muted);margin:6px 0 0}
+
+  /* 卡片 */
+  .cards{display:grid;gap:18px;margin-top:8px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .card-head{padding:20px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;cursor:pointer}
+  .card-head:hover{background:var(--panel-2)}
+  .tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-right:6px}
+  .tag.process{color:var(--accent);border-color:var(--accent)}
+  .tag.outcome{color:var(--accent-2);border-color:var(--accent-2)}
+  .tag.orchestr{color:var(--warn);border-color:var(--warn)}
+  .card-body{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+  .card.open .card-body{max-height:2600px;padding:0 22px 22px}
+  .chev{transition:.3s;color:var(--muted)}
+  .card.open .chev{transform:rotate(180deg)}
+
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0}
+  .ba > div{padding:14px 16px}
+  .ba .before{background:rgba(240,160,75,.06)}
+  .ba .after{background:rgba(67,214,163,.08);border-left:1px solid var(--line)}
+  .ba h4{margin:0 0 6px;font-size:13px}
+  .ba .before h4{color:var(--warn)}
+  .ba .after h4{color:var(--accent-2)}
+  .ba p{margin:0;font-size:14px}
+
+  .subhead{font-size:13px;color:var(--muted);margin:16px 0 6px;font-weight:600}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+  .node{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:13px;cursor:pointer;transition:.15s}
+  .node:hover{border-color:var(--accent);color:var(--accent)}
+  .arrow{color:var(--muted)}
+  .node-detail{margin-top:6px;font-size:14px;color:var(--muted);background:var(--panel-2);border:1px dashed var(--line);border-radius:10px;padding:13px 15px;display:none}
+  .node-detail.show{display:block}
+
+  .role-list{font-size:14px;margin:6px 0;padding-left:0;list-style:none}
+  .role-list li{padding:5px 0 5px 26px;position:relative}
+  .role-list li .ic{position:absolute;left:0}
+  .note{font-size:13px;color:var(--muted);background:rgba(91,140,255,.06);border-left:3px solid var(--accent);padding:9px 12px;border-radius:0 8px 8px 0;margin:12px 0}
+  .ph{color:var(--warn);font-style:italic}
+  .cta{display:inline-block;margin-top:10px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px}
+
+  .demo{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .demo .btns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .demo button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer}
+  .demo button.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .demo .out{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px;font-size:13px;white-space:pre-wrap;min-height:60px;color:var(--muted);font-family:ui-monospace,Menlo,monospace}
+  .lang{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line);color:var(--muted);margin-right:6px}
+  .intent{font-size:14px;background:rgba(67,214,163,.08);border-left:3px solid var(--accent-2);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+  .intent b{color:var(--accent-2)}
+  .arch{display:flex;flex-direction:column;gap:6px;margin:6px 0}
+  .arch .node{width:100%;display:flex;align-items:center}
+  .arch .num{color:var(--accent);font-weight:700;margin-right:10px}
+  .lead-list{font-size:14px;margin:6px 0;padding-left:0;list-style:none}
+  .lead-list li{padding:5px 0 5px 26px;position:relative}
+  .lead-list li .ic{position:absolute;left:0}
+  .lead-list b{color:var(--accent-2)}
+  .ctarow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .cta.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .hero-num{display:flex;align-items:baseline;gap:16px;margin:20px 0 4px;flex-wrap:wrap}
+  .hero-num .big{font-size:54px;font-weight:800;color:var(--accent-2);line-height:1}
+  .hero-num .cap{font-size:14px;color:var(--muted)}
+  .claim{font-size:16px;background:rgba(91,140,255,.06);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+  .camp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:8px}
+  .camp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .camp .nt{font-size:12px;color:var(--warn);font-weight:600;letter-spacing:.04em}
+  .camp h3{font-size:17px;margin:6px 0 10px}
+  .camp .metrics{display:flex;gap:20px;margin:10px 0 12px}
+  .camp .metrics .v{font-size:21px;font-weight:700;color:var(--accent-2)}
+  .camp .metrics .l{font-size:12px;color:var(--muted)}
+  .camp .links{display:flex;flex-direction:column;gap:5px;font-size:13px;margin-top:6px}
+  .tag.lock{color:var(--muted);border-color:var(--line)}
+  .logowall{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+  .brand-tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 14px;text-align:center}
+  .brand-tile .bn{font-size:18px;font-weight:700;color:var(--text)}
+  .brand-tile .bt{font-size:11px;color:var(--muted);margin-top:5px;letter-spacing:.04em}
+  .confid{font-size:13px;color:var(--muted);background:rgba(240,160,75,.06);border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0 4px}
+  @media(max-width:640px){.logowall{grid-template-columns:repeat(2,1fr)}}
+  .pillar{margin-top:26px}
+  .pillar-h{display:flex;align-items:baseline;gap:10px;margin:0 0 12px;font-size:16px;font-weight:700}
+  .pillar-h .pi{font-size:18px}
+  .pillar-h .pc{font-size:12px;color:var(--muted);font-weight:400}
+  .case{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+  .case .ch{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+  .case h3{font-size:17px;margin:0 0 3px}
+  .case .prod{font-size:12px;color:var(--muted)}
+  .case .desc{font-size:14px;margin:12px 0 0}
+  .record{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,rgba(240,160,75,.2),rgba(240,160,75,.06));border:1px solid var(--warn);color:#f0a04b;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:700;white-space:nowrap}
+  .metricline{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0 4px}
+  .metricline .v{font-size:19px;font-weight:700;color:var(--accent-2)}
+  .metricline .l{font-size:12px;color:var(--muted)}
+  .insight{font-size:13px;color:var(--muted);background:rgba(91,140,255,.06);border-left:3px solid var(--accent);padding:9px 13px;border-radius:0 8px 8px 0;margin:12px 0 0}
+  .case .links{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;margin-top:12px}
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px}
+  .disc{font-size:12px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:18px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AI 工具創新應用</div>
+    <h1>打造一套 5 隻 AI Agent 構成的<br/>行銷提案 × 市場研究 × 數據分析工作流</h1>
+    <p class="lead">不只是「會用 AI」,而是<span class="hl">設計一整套有上下游、能彼此編排的 Agent 系統</span>——從站上數據洞察、品牌受眾研究、趨勢預測、成功案例拆解,到最後自動產出可對客戶的互動式提案,讓團隊專案交付更快、品質更穩。</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">5</div><div class="lbl">自建 AI Agent</div></div>
+      <div class="stat"><div class="num">Multi-Agent</div><div class="lbl">第 5 隻會自動編排前 3 隻</div></div>
+      <div class="stat"><div class="num">5+</div><div class="lbl">數據源整合（Redash／BigQuery／API／雲端文件…）</div></div>
+      <div class="stat"><div class="num"><span class="ph">待補</span></div><div class="lbl">提案準備工時縮減</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 系統架構 / 能力地圖 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">系統架構</div>
+    <h2>5 隻 Agent 不是並列，而是一條完整的提案生產線</h2>
+    <p class="muted">每一隻負責工作流的一段;最後的「提案產出 Agent」會自動呼叫前面幾隻,把零散洞察整合成一份對外提案。</p>
+
+    <div class="pipe">
+      <div class="stepwrap"><div class="step"><div class="k">A1</div><div class="t">熱門內容分析</div><div class="d">站上熱議 / 趨勢數據</div></div><span class="arrow">→</span></div>
+      <div class="stepwrap"><div class="step"><div class="k">A2</div><div class="t">品牌 / TA 洞察</div><div class="d">受眾輿情研究</div></div><span class="arrow">→</span></div>
+      <div class="stepwrap"><div class="step"><div class="k">A3</div><div class="t">趨勢預測 × 切角</div><div class="d">策略發想</div></div><span class="arrow">→</span></div>
+      <div class="stepwrap"><div class="step"><div class="k">A4</div><div class="t">案例研究拆解</div><div class="d">成功邏輯萃取</div></div></div>
+    </div>
+
+    <div class="orch">
+      <div class="t">⤵ A5・產業提案產出 Agent（編排者 / Orchestrator）</div>
+      <div class="d">輸入一個產業 → 自動<b>呼叫 A1、A3、A4</b> + 整合雲端週報與產品知識庫 → 直接產出可對客戶的互動式 HTML 提案網頁（並可一鍵推送 Slack）。這是整套系統的「總成」。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 方法論 / 共通設計原則 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">設計方法論</div>
+    <h2>貫穿 5 隻 Agent 的共通設計原則</h2>
+    <p class="muted">這些是我在每一隻 Agent 都堅持的工程準則——也是讓 AI 產出「能放心拿去提案」的關鍵。</p>
+    <div class="method">
+      <div class="m"><b>① 數據可溯源、反幻覺</b><p>每個具體數字與聲明都必須能對應到某次工具實際回傳;查不到就明確標「數據缺失」,嚴禁 LLM 自行推算或用「大約／估計」帶過。</p></div>
+      <div class="m"><b>② 確定性運算優先於 LLM</b><p>分類、過濾、日期計算等改用 Python／regex 處理（可重現），不交給 LLM 自由發揮,降低不可控的隨機性。</p></div>
+      <div class="m"><b>③ 多源工具編排</b><p>串接 Redash、Superset BigQuery、Dcard API、Google Drive、Slack 等多個系統,並以「平行查詢」縮短等待。</p></div>
+      <div class="m"><b>④ 品質與安全護欄</b><p>業配文／成人內容程式化過濾、對外輸出數據模糊化、強制套用品牌視覺規範——確保產出可直接對外。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Agent 卡片 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Agent 詳解</div>
+    <h2>逐一拆開：它解決什麼、我設計了什麼</h2>
+    <p class="muted">流程型 → 看「怎麼做出來的」;成果型 → 看「產出多好」。點標題展開。<span class="ph">（標「待補」處請填入你的真實數字）</span></p>
+
+    <div class="cards">
+
+      <!-- A1 流程型 -->
+      <div class="card open">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag process">流程型</span>
+            <h3 style="margin:8px 0 4px">A1・熱門內容分析 Agent</h3>
+            <div class="muted">輸入時間區間，自動產出站上「熱議文章 / 話題 / 高流量看板 / 竄升關鍵字」四大分析</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="ba">
+            <div class="before"><h4>Before</h4><p>需跨多個後台手動撈數據、人工整理四大維度，數小時起跳，分析口徑因人而異。</p></div>
+            <div class="after"><h4>After</h4><p>一句話指定區間 → 自動編排查詢 → 結構化報告 +（可選）互動式儀表板，約 <span class="ph">待補</span> 分鐘。</p></div>
+          </div>
+          <div class="subhead">設計流程（點節點看那一層在做什麼）</div>
+          <div class="flow">
+            <div class="node" onclick="showNode('a1n1')">四路平行查詢</div><span class="arrow">→</span>
+            <div class="node" onclick="showNode('a1n2')">兩階段看板識別</div><span class="arrow">→</span>
+            <div class="node" onclick="showNode('a1n3')">確定性話題聚類</div><span class="arrow">→</span>
+            <div class="node" onclick="showNode('a1n4')">溯源檢查 + 輸出</div>
+          </div>
+          <div id="a1n1" class="node-detail">文章、看板流量(當期/比較期)、竄升關鍵字四路查詢「同步送出、不互等」,大幅縮短總等待時間。</div>
+          <div id="a1n2" class="node-detail">先用快取 API 找看板,找不到才 fallback 到資料庫查詢——<b>絕不讓 LLM 硬猜看板代號</b>,避免查錯對象。</div>
+          <div id="a1n3" class="node-detail"><b>關鍵設計：</b>話題分類用 Python 關鍵字規則比對,而非 LLM 推斷,確保同樣輸入永遠得到同樣分類。</div>
+          <div id="a1n4" class="node-detail">輸出前自我檢驗:每個數字都要能回答「來自哪個工具、哪一筆」,否則標 ⚠️ 數據缺失。</div>
+          <ul class="role-list">
+            <li><span class="ic">🧠</span><b>我設計：</b>四路平行查詢編排、兩階段看板識別、確定性分類規則、反幻覺溯源機制</li>
+            <li><span class="ic">🔧</span><b>我串接：</b>Redash、Superset BigQuery、Dcard API 三個數據源</li>
+            <li><span class="ic">🤖</span><b>AI 生成：</b>話題簡介、受眾輪廓摘要（數字皆來自工具回傳）</li>
+          </ul>
+          <div class="note"><b>迭代故事：</b>第一版偶爾會「編造」查無來源的數字 → 我加入「每個聲明都須能溯源到某次工具回傳,否則標數據缺失」的硬規則,可信度大幅提升。</div>
+          <a class="cta" href="#">▶ 觀看流程回放 Demo（換成你的連結）</a>
+        </div>
+      </div>
+
+      <!-- A2 流程型 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag process">流程型</span>
+            <h3 style="margin:8px 0 4px">A2・品牌 / TA 輿情洞察 Agent</h3>
+            <div class="muted">給定品牌或受眾輪廓，挖掘人口輪廓、興趣行為、主動搜尋需求與真實留言心聲</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="ba">
+            <div class="before"><h4>Before</h4><p>人工讀大量文章與留言整理 TA 洞察，主觀又耗時，業配文混入還會污染結論。</p></div>
+            <div class="after"><h4>After</h4><p>多 Query 平行查詢 + 留言自動萃取 + 業配文程式化剔除 → 五維度 TA 洞察報告。</p></div>
+          </div>
+          <div class="subhead">獨有亮點（流程）</div>
+          <ul class="role-list">
+            <li><span class="ic">🛡️</span><b>業配文剔除演算法：</b>偵測留言中的分潤連結(regex),只要一則命中就把整篇從名單移除、自動補下一順位,避免養留言的業配污染洞察</li>
+            <li><span class="ic">📐</span><b>嚴謹查詢治理：</b>所有查詢走「唯一允許流程」、四種固定回執格式、失敗自動 fallback,讓結果可稽核</li>
+            <li><span class="ic">🔭</span><b>跨看板異常捕捉：</b>找品牌在「非預期看板」的討論,挖出隱性需求場景</li>
+          </ul>
+          <ul class="role-list">
+            <li><span class="ic">🧠</span><b>我設計：</b>業配文剔除邏輯、查詢治理流程與回執規範、跨看板捕捉策略、數據溯源表</li>
+            <li><span class="ic">🔧</span><b>我串接：</b>Redash（多個查詢）、Dcard API（文章 / 留言）</li>
+            <li><span class="ic">🤖</span><b>AI 生成：</b>TA 需求洞察文字、留言心聲歸納</li>
+          </ul>
+          <div class="note"><b>迭代故事：</b>發現「養留言」的業配文會污染 TA 洞察 → 加入「任一留言含分潤連結即整篇剔除並補位」的機制。</div>
+        </div>
+      </div>
+
+      <!-- A3 流程型 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag process">流程型</span>
+            <h3 style="margin:8px 0 4px">A3・趨勢預測 × 切角發想 Agent</h3>
+            <div class="muted">為品牌指定的未來檔期，預測值得提前佈局的話題，產出切角與可貼上的文案</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="ba">
+            <div class="before"><h4>Before</h4><p>憑經驗猜趨勢，缺數據依據，難說服客戶為何此時操作這個話題。</p></div>
+            <div class="after"><h4>After</h4><p>用數據交叉驗證後的切角建議 + 直接可貼上的 Dcard 文案，提案更有底氣。</p></div>
+          </div>
+          <div class="subhead">獨有亮點（方法論）</div>
+          <ul class="role-list">
+            <li><span class="ic">🎯</span><b>雙區間交叉驗證預測法：</b>用「去年同期聲量 × 近期動能」交叉成四象限,決定佈局力度(強推 / 輕量 / 試水 / 不做),把「預測」變成有依據的判斷</li>
+            <li><span class="ic">🔒</span><b>反臆測：</b>每個預測結論都強制附參考區間數據,禁止「憑感覺」;目標區間尚未發生時強制標注,不准填推測數字</li>
+            <li><span class="ic">💡</span><b>嚴謹 + 發散並行：</b>數據連結型切角(有憑有據) 與 天馬行空創意切角(發散) 同時產出</li>
+          </ul>
+          <ul class="role-list">
+            <li><span class="ic">🧠</span><b>我設計：</b>雙區間交叉驗證方法論、切角產出框架、話題能量公式展開邏輯</li>
+            <li><span class="ic">🔧</span><b>我串接：</b>Redash、Dcard API、Web Search（外部趨勢）</li>
+            <li><span class="ic">🤖</span><b>AI 生成：</b>切角創意、可貼上的 Dcard 文案</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- A4 成果型 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag outcome">成果型</span>
+            <h3 style="margin:8px 0 4px">A4・案例研究與拆解 Agent</h3>
+            <div class="muted">搜尋成功合作案例，用自建「話題黃金公式」拆解成功原因、萃取可複製邏輯</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="ba">
+            <div class="before"><h4>Before</h4><p>看到別人的成功案例只能說「做得好」，講不出可複製、可教給團隊的方法。</p></div>
+            <div class="after"><h4>After</h4><p>貼上連結 → 五層框架拆解 → 一份「可套用到下一個提案」的操作邏輯報告。</p></div>
+          </div>
+          <div class="subhead">獨有亮點（成果）</div>
+          <ul class="role-list">
+            <li><span class="ic">🧩</span><b>自建「話題黃金公式」五層分析框架：</b>把模糊的「為什麼會爆紅」拆成 時機 × 共鳴 × 格式 × 擴散 × 長尾 + 品牌出現層位,讓成功變成可複製的結構</li>
+            <li><span class="ic">📄</span><b>成果可直接用：</b>拆解報告的「成功關鍵 + 如何套用到下一個提案」段落,業務拿了就能用</li>
+          </ul>
+          <ul class="role-list">
+            <li><span class="ic">🧠</span><b>我設計：</b>五層黃金公式框架、案例拆解輸出格式、心理學切角工具箱</li>
+            <li><span class="ic">🔧</span><b>我串接：</b>Web Search、Dcard API、內部案例知識庫</li>
+            <li><span class="ic">🤖</span><b>AI 生成：</b>案例五層拆解分析、可複製邏輯萃取</li>
+          </ul>
+          <div class="note"><b>成果樣本：</b>此處放一份「案例拆解報告」截圖（去識別化），讓人一眼看到產出長相。</div>
+        </div>
+      </div>
+
+      <!-- A5 編排者 / 成果型 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag orchestr">編排者</span><span class="tag outcome">成果型</span>
+            <h3 style="margin:8px 0 4px">A5・產業提案產出 Agent（系統總成）</h3>
+            <div class="muted">輸入一個產業，自動編排前面的 Agent，產出可對客戶的互動式提案網頁</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="ba">
+            <div class="before"><h4>Before</h4><p>業務做一份產業提案要跨多個資料源、自己想切角、再手動排版，半天到一天。</p></div>
+            <div class="after"><h4>After</h4><p>輸入產業 → 系統自動編排多隻 Agent + 整合週報 → 直接產出對外提案網頁，約 <span class="ph">待補</span>。</p></div>
+          </div>
+          <div class="subhead">這隻為什麼最值得講（多 Agent 編排）</div>
+          <ul class="role-list">
+            <li><span class="ic">🪄</span><b>Multi-Agent 編排：</b>一隻 Agent 自動呼叫 <b>A1 熱門內容 + A3 趨勢預測 + A4 案例分析</b>,把三方產出整合成一份提案——這是整套系統的核心價值</li>
+            <li><span class="ic">🚦</span><b>多模式路由：</b>一般版 / 自動版 / Slack 報告轉網頁,同一隻 Agent 服務多種使用情境</li>
+            <li><span class="ic">🔗</span><b>多源整合：</b>雲端週報 + 外部搜尋趨勢 + 站內話題庫 + 產品知識庫</li>
+            <li><span class="ic">📦</span><b>對外即用的成果：</b>產出可直接給客戶的互動式 HTML 提案,並能自動推送 Slack 通知團隊</li>
+          </ul>
+          <div class="subhead">Mini Demo（點按鈕看這隻 Agent 的編排流程）</div>
+          <div class="demo">
+            <div class="muted" style="font-size:13px">選一個範例產業：</div>
+            <div class="btns">
+              <button onclick="runDemo('beauty')">美妝</button>
+              <button onclick="runDemo('fin')">金融理財</button>
+              <button class="ghost" onclick="document.getElementById('demoOut').textContent='（編排流程會顯示在這裡）'">清除</button>
+            </div>
+            <div id="demoOut" class="out">（編排流程會顯示在這裡）</div>
+          </div>
+          <ul class="role-list">
+            <li><span class="ic">🧠</span><b>我設計：</b>多 Agent 編排流程、模式路由表、產品推薦邏輯、品牌設計規範</li>
+            <li><span class="ic">🔧</span><b>我串接：</b>Google Drive、Slack，以及另外 3 隻 Agent（子 Agent 呼叫）</li>
+            <li><span class="ic">🤖</span><b>AI 生成：</b>提案文案、產品策略說明、互動式提案網頁</li>
+          </ul>
+          <a class="cta" href="#">🔗 開啟一份提案網頁範例（換成你的連結）</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disc">⚠️ 本頁內容已抽象化處理，刻意不含任何內部機密（Query ID、報價、Webhook、雲端路徑、真實品牌合作成效）。對外公開前請再次自行檢查。所有標「待補」處為待填入的真實數字。</div>
+  </div>
+</section>
+
+<!-- ============ 策略領導與規劃 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">策略領導與規劃</div>
+    <h2>主導跨部門與跨公司的策略級產出</h2>
+    <p class="muted">這裡比的不是「做出一份文件」，而是<span class="hl">能定義方向、統籌資源、把數據轉成商業說服力</span>的領導與規劃能力。</p>
+
+    <div class="cards">
+
+      <!-- 旗艦 1：Sales Kit -->
+      <div class="card open">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag orchestr">旗艦成果</span><span class="tag process">策略規劃</span>
+            <h3 style="margin:8px 0 4px">2026 Dcard KA Sales Kit（破百頁）</h3>
+            <div class="muted">廣告部門年度對客戶的核心銷售論述，從架構到完稿</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>戰略意圖：</b>為廣告部門建立一套對 KA（關鍵客戶）一致、有說服力的年度銷售論述，把「Dcard 為何值得投資」講成可複製的標準素材。</div>
+
+          <div class="subhead">我的主導範圍</div>
+          <ul class="lead-list">
+            <li><span class="ic">🎯</span><b>主導</b>破百頁 Sales Kit 從<b>整體架構設計到完稿</b></li>
+            <li><span class="ic">🤝</span><b>統籌</b>跨團隊內容產出，整合成單一連貫敘事</li>
+            <li><span class="ic">🧭</span><b>與主管團隊共同制定</b>年度銷售策略主軸</li>
+            <li><span class="ic">🌏</span><b>產出中英雙語版本</b>，支援國際 / 跨國客戶溝通</li>
+          </ul>
+
+          <div class="subhead">我設計的論述架構（點章節看內容重點）</div>
+          <div class="arch">
+            <div class="node" onclick="showNode('sk1')"><span class="num">01</span>平台價值與規模</div>
+            <div class="node" onclick="showNode('sk2')"><span class="num">02</span>受眾資產與輪廓</div>
+            <div class="node" onclick="showNode('sk3')"><span class="num">03</span>廣告產品矩陣</div>
+            <div class="node" onclick="showNode('sk4')"><span class="num">04</span>成功案例佐證</div>
+            <div class="node" onclick="showNode('sk5')"><span class="num">05</span>合作方案與規格</div>
+          </div>
+          <div id="sk1" class="node-detail">用平台關鍵數據建立「為何選 Dcard」的第一層說服力。<span class="ph">（章節名稱與重點請依實際內容校正）</span></div>
+          <div id="sk2" class="node-detail">勾勒核心受眾輪廓與獨特性，對應品牌的 TA 需求。</div>
+          <div id="sk3" class="node-detail">把零散的廣告產品整理成清晰的選擇矩陣，降低客戶決策成本。</div>
+          <div id="sk4" class="node-detail">以實際合作案例佐證成效，把論述從「我們很好」變成「別人也驗證過」。</div>
+          <div id="sk5" class="node-detail">收斂成可直接報價 / 提案的合作方案，讓銷售即用。</div>
+
+          <div class="note"><b>為何能展現規劃力：</b>破百頁不是寫頁面，而是設計一條「平台價值 → 受眾 → 產品 → 案例 → 方案」的說服動線——這張架構本身就是領導與規劃能力的證據。<span class="ph">（影響 / 採用情形待補）</span></div>
+
+          <div class="ctarow">
+            <a class="cta" href="https://drive.google.com/file/d/1WeCpS-jesYJ8PI3XG6JwfinGCMjztbDE/view?usp=sharing">📄 中文版</a>
+            <a class="cta ghost" href="https://drive.google.com/file/d/1DMLSrauNgP9oK7EiapW-RcOaXNV66mCu/view?usp=sharing">📄 English version</a>
+          </div>
+          <div class="disc" style="margin-top:12px">⚠️ 此為公司銷售資產，目前連結為「知連結即可開」。對外公開作品集前，建議改為截圖摘要、設權限或改「可索取」。</div>
+        </div>
+      </div>
+
+      <!-- 旗艦 2：消費者潛力報告 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag orchestr">旗艦成果</span><span class="tag outcome">策略洞察</span>
+            <h3 style="margin:8px 0 4px">2026 Dcard 消費者潛力報告</h3>
+            <div class="muted">與國際調研公司 KANTAR 合作，用數據證明 Dcard 的品牌投資價值</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>戰略意圖：</b>以第三方調研數據，建立「Dcard 使用者具備消費潛力、值得品牌投資」的客觀論述，作為銷售與品牌溝通的權威背書。</div>
+
+          <div class="subhead">我的主導範圍</div>
+          <ul class="lead-list">
+            <li><span class="ic">🚀</span><b>發起並主導</b>與國際調研公司 <b>KANTAR</b> 的合作專案</li>
+            <li><span class="ic">🎯</span><b>定義</b>研究命題與調查方向（要證明什麼、問什麼）</li>
+            <li><span class="ic">📊</span><b>進行數據分析</b>，<b>轉化</b>調查結果為對品牌的投資價值論述</li>
+          </ul>
+
+          <div class="subhead">數據 → 論述的轉化（展示策略思維）</div>
+          <ul class="lead-list">
+            <li><span class="ic">①</span><span class="ph">關鍵發現 1（待補實際數據）</span> → 對品牌代表的投資價值是…</li>
+            <li><span class="ic">②</span><span class="ph">關鍵發現 2（待補實際數據）</span> → 對品牌代表的投資價值是…</li>
+          </ul>
+
+          <div class="note"><b>為何能展現策略領導：</b>駕馭與國際調研公司的合作、定義研究命題、再把數據建構成商業論點——這是「用數據說服市場」的策略能力，不只是看報表。</div>
+
+          <a class="cta" href="https://drive.google.com/file/d/1RWxdJiBHRGNsa--emswzQpTpEavxhl_M/view?usp=sharing">📄 開啟報告</a>
+          <div class="disc" style="margin-top:12px">⚠️ 同上：市場資產，對外公開前建議改截圖摘要或設權限。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 大型通案策劃與統籌執行 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">大型通案策劃與統籌執行</div>
+    <h2>從策略到落地，扛營收結果</h2>
+    <p class="muted">這一塊不是紙上規劃，而是<span class="hl">規劃 → 統籌執行 → 對營收負責</span>的完整閉環——在年度三大促銷節點操盤跨品牌通案。</p>
+
+    <div class="hero-num">
+      <div class="big">+66.4%</div>
+      <div class="cap">3 檔通案總營收 YoY 成長<br/><b style="color:#e6edf3">接手規劃後 vs 接手前</b></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num">1,400w+</div><div class="lbl">3 檔總營收</div></div>
+      <div class="stat"><div class="num">3 檔</div><div class="lbl">母檔 / 週年慶 / 雙 11</div></div>
+      <div class="stat"><div class="num">3,600w+</div><div class="lbl">活動總曝光</div></div>
+      <div class="stat"><div class="num">29w+</div><div class="lbl">活動總互動</div></div>
+    </div>
+
+    <div class="claim">🎯 <b>策略主張：</b>不是衝曝光，而是<b style="color:#43d6a3">精準溝通「具明確購買意圖」的受眾</b>——把資源打在會買單的人身上，這正是營收能成長 66.4% 的原因。同時統籌多個品牌、在促銷高壓節點如期交付，展現跨品牌通案的統籌力。</div>
+
+    <div class="subhead" style="margin-top:22px">三檔活動（執行落地的證據 · 皆為公開連結）</div>
+    <div class="camp-grid">
+
+      <div class="camp">
+        <div class="nt">促銷節點 · 母檔</div>
+        <h3>卡友 D 樂園</h3>
+        <div class="metrics">
+          <div><div class="v">1,248w+</div><div class="l">總曝光</div></div>
+          <div><div class="v">12w+</div><div class="l">總互動</div></div>
+        </div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/makeup/p/255004978">→ 活動主文</a>
+        </div>
+      </div>
+
+      <div class="camp">
+        <div class="nt">促銷節點 · 週年慶</div>
+        <h3>卡友 D 選品</h3>
+        <div class="metrics">
+          <div><div class="v">2,400w+</div><div class="l">總曝光</div></div>
+          <div><div class="v">7.5w+</div><div class="l">總互動</div></div>
+        </div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/makeup/p/256605613">→ 活動主文</a>
+          <a href="https://www.dcard.tw/@d_selection">→ 活動帳號 @d_selection</a>
+        </div>
+      </div>
+
+      <div class="camp">
+        <div class="nt">促銷節點 · 雙 11</div>
+        <h3>Dcard 感謝祭</h3>
+        <div class="metrics">
+          <div><div class="v">9.8w+</div><div class="l">兩波總互動</div></div>
+          <div><div class="v">2 波</div><div class="l">看板活動</div></div>
+        </div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/makeup/p/259806007">→ 主文（第一波）</a>
+          <a href="https://www.dcard.tw/f/makeup/p/260025574">→ 主文（第二波）</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 指標品牌 / 集團提案 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">指標品牌 / 集團提案</div>
+    <h2>為國際指標品牌操刀大型策略提案</h2>
+    <p class="muted">這一塊展現的是<span class="hl">大型策略提案能力，以及把公司內部多團隊資源統合成單一論述的跨部門統籌力</span>。</p>
+
+    <!-- 品牌名牆 -->
+    <div class="logowall">
+      <div class="brand-tile"><div class="bn">雅詩蘭黛集團</div><div class="bt">ESTÉE LAUDER · 集團</div></div>
+      <div class="brand-tile"><div class="bn">萊雅集團</div><div class="bt">L'ORÉAL · 集團</div></div>
+      <div class="brand-tile"><div class="bn">三星</div><div class="bt">SAMSUNG · 指標品牌</div></div>
+      <div class="brand-tile"><div class="bn">SK-II</div><div class="bt">指標品牌</div></div>
+    </div>
+
+    <div class="confid">🔒 部分提案涉及客戶機密，以下僅呈現<b style="color:#e6edf3">策略思路與我的角色</b>，具體提案內容恕不公開，核心邏輯可於面談說明。</div>
+
+    <div class="cards">
+
+      <!-- 雅詩蘭黛 -->
+      <div class="card open">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag orchestr">集團提案</span><span class="tag lock">🔒 提案保密</span>
+            <h3 style="margin:8px 0 4px">雅詩蘭黛集團</h3>
+            <div class="muted">重新溝通 Dcard 的媒體定位與服務價值</div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>挑戰 / 目標：</b>讓集團重新認識 Dcard 的媒體定位與服務——從單純的投放管道，提升為具策略價值的合作夥伴。</div>
+          <div class="subhead">我的策略切入（方法）</div>
+          <ul class="lead-list">
+            <li><span class="ic">🔍</span><b>分析集團旗下各品牌</b>在 Dcard 的聲量與痛點，針對不同品牌對應不同解法</li>
+            <li><span class="ic">🧩</span>從「集團視角」整合，而非單一品牌單點提案<span class="ph">（具體發現與建議保密）</span></li>
+          </ul>
+          <div class="subhead">我統合的跨部門資源</div>
+          <ul class="lead-list">
+            <li><span class="ic">🤝</span><span class="ph">數據團隊聲量分析 + 產品團隊廣告產品 + 創意 + 業務…（請依實際校正）</span></li>
+          </ul>
+          <div class="note">🔒 核心策略思路與提案架構可於面談完整說明。</div>
+        </div>
+      </div>
+
+      <!-- 萊雅 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag orchestr">集團提案</span><span class="tag lock">🔒 提案保密</span>
+            <h3 style="margin:8px 0 4px">萊雅集團</h3>
+            <div class="muted"><span class="ph">一句話定位待補</span></div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>挑戰 / 目標：</b><span class="ph">待補</span></div>
+          <div class="subhead">我的策略切入（方法）</div>
+          <ul class="lead-list"><li><span class="ic">🔍</span><span class="ph">待補（講方法，不講具體發現）</span></li></ul>
+          <div class="subhead">我統合的跨部門資源</div>
+          <ul class="lead-list"><li><span class="ic">🤝</span><span class="ph">待補</span></li></ul>
+          <div class="note">🔒 核心策略思路可於面談說明。</div>
+        </div>
+      </div>
+
+      <!-- 三星 -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag process">指標品牌</span><span class="tag lock">🔒 提案保密</span>
+            <h3 style="margin:8px 0 4px">三星</h3>
+            <div class="muted"><span class="ph">一句話定位待補</span></div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>挑戰 / 目標：</b><span class="ph">待補</span></div>
+          <div class="subhead">我的策略切入（方法）</div>
+          <ul class="lead-list"><li><span class="ic">🔍</span><span class="ph">待補</span></li></ul>
+          <div class="subhead">我統合的跨部門資源</div>
+          <ul class="lead-list"><li><span class="ic">🤝</span><span class="ph">待補</span></li></ul>
+          <div class="note">🔒 核心策略思路可於面談說明。</div>
+        </div>
+      </div>
+
+      <!-- SK-II -->
+      <div class="card">
+        <div class="card-head" onclick="toggleCard(this)">
+          <div>
+            <span class="tag process">指標品牌</span><span class="tag lock">🔒 提案保密</span>
+            <h3 style="margin:8px 0 4px">SK-II</h3>
+            <div class="muted"><span class="ph">一句話定位待補</span></div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body">
+          <div class="intent"><b>挑戰 / 目標：</b><span class="ph">待補</span></div>
+          <div class="subhead">我的策略切入（方法）</div>
+          <ul class="lead-list"><li><span class="ic">🔍</span><span class="ph">待補</span></li></ul>
+          <div class="subhead">我統合的跨部門資源</div>
+          <ul class="lead-list"><li><span class="ic">🤝</span><span class="ph">待補</span></li></ul>
+          <div class="note">🔒 核心策略思路可於面談說明。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 品牌合作成果 ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">品牌合作成果</div>
+    <h2>100+ 品牌經驗，口碑 × 影音 × 實體全形式操刀</h2>
+    <p class="muted">這一塊展現的是<span class="hl">廣度與形式的全面性</span>——不管什麼 brief 都能執行，且做得出標竿級代表作。</p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num">100+</div><div class="lbl">提案或執行過的品牌</div></div>
+      <div class="stat"><div class="num">3 大形式</div><div class="lbl">口碑 · 影音 · 實體活動</div></div>
+      <div class="stat"><div class="num">🏆 紀錄級</div><div class="lbl">YT 頻道 6 年來排名第二</div></div>
+    </div>
+
+    <div class="claim">💡 <b>可複製的創意邏輯：</b>先找到受眾<b style="color:#43d6a3">情緒 / 需求的交叉點</b>，再把品牌自然置入——成功不是運氣，而是有方法。</div>
+
+    <!-- 口碑 -->
+    <div class="pillar">
+      <div class="pillar-h"><span class="pi">🗣️</span>口碑<span class="pc">用真實討論與互動堆疊品牌聲量</span></div>
+      <div class="case">
+        <div class="ch">
+          <div>
+            <h3>ALLIE 解密戀愛吸引力 × MBTI 心理測驗</h3>
+            <div class="prod">ALLIE 4 款防曬乳</div>
+          </div>
+        </div>
+        <div class="insight">🎯 交叉點：命中「<b>戀愛焦慮 × 自我探索 × 功能需求</b>」三個情緒同時存在的交叉點，讓產品資訊自然擴散。</div>
+        <div class="metricline">
+          <div><div class="v">3.5w+</div><div class="l">心測瀏覽數</div></div>
+          <div><div class="v">2.7w+</div><div class="l">遊玩數</div></div>
+          <div><div class="v">730+</div><div class="l">分享數</div></div>
+          <div><div class="v">+125%</div><div class="l">合作後品牌討論 / 搜尋量成長</div></div>
+        </div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/girl/p/259320156">→ 徵文活動</a>
+          <a href="https://ooopenlab.cc/preview/gOzcb36QAUIwsDApueK9">→ 心理測驗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 影音 -->
+    <div class="pillar">
+      <div class="pillar-h"><span class="pi">▶️</span>影音<span class="pc">高完播、高擴散的原生內容</span></div>
+
+      <div class="case">
+        <div class="ch">
+          <div>
+            <h3>Dcard Video「主委」& 女友一日放閃計劃</h3>
+            <div class="prod">D+AF 秋冬鞋款宣傳</div>
+          </div>
+          <span class="record">🏆 YT 頻道 6 年來第二 · 最快破 30w 觀看</span>
+        </div>
+        <div class="desc">邀請人氣成員 Rio 擔任戀愛導師，與主委一起安排和女友的約會行程，在多元情境中自然置入鞋款宣傳。</div>
+        <div class="metricline">
+          <div><div class="v">61.8w+</div><div class="l">觀看數</div></div>
+        </div>
+        <div class="links">
+          <a href="https://www.youtube.com/watch?v=1LWOWklTVtA">→ 觀看影片</a>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="ch">
+          <div>
+            <h3>法國皇家「幼寵養育」搶答大賽</h3>
+            <div class="prod">法國皇家 · 幼寵養育知識教育</div>
+          </div>
+        </div>
+        <div class="desc">先網路調查卡友對「幼寵養育」的疑惑，再邀請 Dcard Video 三位成員與同事帶自家寵物出演，以趣味搶答賽搭配專業獸醫師解惑，寓教於樂地傳達正確養育知識。</div>
+        <div class="insight">🎯 交叉點：<b>養育知識 × 寓教於樂 × 寵物萌點</b>——把硬知識包裝成想看完的內容。</div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/pet/p/255565763">→ 事前調查文章</a>
+          <a href="https://www.youtube.com/watch?v=6WvqFqiaqLc">→ 觀看影片</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 實體活動 -->
+    <div class="pillar">
+      <div class="pillar-h"><span class="pi">🎪</span>實體活動<span class="pc">整合創作者網絡與線下實作執行</span></div>
+      <div class="case">
+        <div class="ch">
+          <div>
+            <h3>NARS 底妝 × 玩轉光影攝影工作坊</h3>
+            <div class="prod">NARS</div>
+          </div>
+        </div>
+        <div class="desc">招募 <b>35+ 位 Dcard 創作者與卡友</b>參與，在專業彩妝老師帶領下體驗 NARS「以手上妝」的底妝哲學，並特邀美妝短影音創作者「姍咚」教學光影攝影技巧，實作拍出如原生肌膚般自帶光芒的產品妝效。</div>
+        <div class="insight">🛠️ 能力展現：從創作者招募、課程設計到線下執行一手統籌，把產品哲學變成可體驗、可被內容化的活動。</div>
+        <div class="links">
+          <a href="https://www.dcard.tw/f/makeup/p/255113207">→ 花絮文章</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">作品集 · AI 工具創新 × 策略領導 × 通案操盤 × 指標品牌 × 品牌合作成果</div>
+</footer>
+
+<script>
+  function toggleCard(el){ el.parentElement.classList.toggle('open'); }
+  function showNode(id){
+    document.querySelectorAll('.node-detail').forEach(d=>{ if(d.id!==id) d.classList.remove('show'); });
+    document.getElementById(id).classList.toggle('show');
+  }
+  function runDemo(which){
+    const out = document.getElementById('demoOut');
+    out.textContent = '編排中…';
+    const data = {
+      beauty: "🏭 產業：美妝\n────────────\n① 呼叫 A1 熱門內容 → 撈近兩週美妝板熱議話題、竄升關鍵字\n② 整合雲端週報 + 外部搜尋趨勢\n③ 呼叫 A3 趨勢預測 → 產出 5 個切角\n④ 呼叫 A4 案例分析 → 找一筆相近成功案例拆解\n⑤ 比對產品知識庫 → 推薦 2–3 個合作方案\n✅ 產出：可對客戶的互動式提案網頁",
+      fin: "🏭 產業：金融理財\n────────────\n① 呼叫 A1 熱門內容 → 撈理財 / 信用卡相關熱議與搜尋趨勢\n② 整合雲端週報 + 外部搜尋趨勢\n③ 呼叫 A3 趨勢預測 → 產出 5 個切角\n④ 呼叫 A4 案例分析 → 找一筆相近成功案例拆解\n⑤ 比對產品知識庫 → 推薦 2–3 個合作方案\n✅ 產出：可對客戶的互動式提案網頁"
+    };
+    setTimeout(()=>{ out.textContent = data[which]; }, 450);
+  }
+</script>
+</body>
+</html>

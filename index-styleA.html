@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>許芸瑄 Vivien Hsu｜作品集 Portfolio</title>
+<meta name="description" content="許芸瑄 Vivien Hsu 的作品集：廣告策略 × 商業開發 × AI 應用。自建 5 隻 AI Agent、操盤 1,400 萬通案營收、為 100+ 品牌提案。" />
+<!-- 分享預覽（部署後請把 og:image / og:url 換成完整網址 https://你的網域/images/og-cover.png）-->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="許芸瑄 Vivien Hsu｜廣告策略 × 商業開發 × AI" />
+<meta property="og:description" content="自建 5 隻 AI Agent、操盤 1,400 萬通案營收、為 100+ 品牌提案。用 AI 與數據把提案變成客戶買單的商業決策。" />
+<meta property="og:image" content="images/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="許芸瑄 Vivien Hsu｜廣告策略 × 商業開發 × AI" />
+<meta name="twitter:description" content="自建 5 隻 AI Agent、操盤 1,400 萬通案營收、為 100+ 品牌提案。" />
+<meta name="twitter:image" content="images/og-cover.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='15'%20fill='%23042A7C'/%3E%3Ctext%20x='32'%20y='45'%20font-size='40'%20font-family='Arial,sans-serif'%20font-weight='900'%20fill='%23FFB800'%20text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    /* ===== A 設計系統（沿用 B 變數名稱，換成 A 的值，確保 inline style 不壞）===== */
+    --blue:#005AEE;        /* royal：主要藍（inline 仍引用） */
+    --blue-dark:#042A7C;   /* navy：深藍 */
+    --blue-700:#0847CC;    /* 深藍 hover */
+    --blue-50:#EEF4FF;     /* 淺藍 surface */
+    --blue-100:#D6E4FF;
+    --blue-light:#72AFFF;  /* sky */
+    --amber:#FFB800;       /* A 暖金（取代 B 螢光黃） */
+    --amber-600:#B27A00;   /* 白底金色文字 */
+    --ink:#0F1B33;         /* 標題深色 */
+    --gray:#5B6473;        /* 次要文字（slate） */
+    --gray-300:rgba(15,27,51,.2);
+    --line:#E5E7EB;        /* 邊框 */
+    --white:#ffffff;
+    --bg:#F6F7F8;          /* 淺灰 section */
+    /* A 專屬新增 */
+    --navy:#042A7C;--royal:#005AEE;--sky:#72AFFF;
+    --orange:#FF6B35;--orange-600:#e55a28;   /* A 主強調：珊瑚橘 */
+    --body:#374151;--muted:#6B7280;
+    --radius:14px;
+    --shadow:0 4px 24px rgba(4,42,124,.08);
+    --shadow-lg:0 12px 40px rgba(4,42,124,.16);
+    --maxw:1040px;
+    font-family:'Inter','Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#fff;color:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--royal);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{line-height:1.25;margin:0}
+  h2{font-size:clamp(26px,3.6vw,36px);color:var(--navy);font-weight:900;letter-spacing:-1px}
+  .sec-head h2 .zh,.sec-head h2 .en{background:linear-gradient(transparent 62%,rgba(255,184,0,.45) 62%)}
+  .muted{color:var(--muted)}
+
+  /* keyframes（取自 A） */
+  @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}33%{transform:translateY(-22px) rotate(6deg)}66%{transform:translateY(11px) rotate(-4deg)}}
+  @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}40%{transform:translateY(16px) rotate(-5deg)}75%{transform:translateY(-12px) rotate(3deg)}}
+  @keyframes pring{0%{transform:translate(-50%,-50%) scale(1);opacity:.7}100%{transform:translate(-50%,-50%) scale(1.9);opacity:0}}
+  @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(220%)}}
+  @keyframes gpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.6)}50%{box-shadow:0 0 0 9px rgba(255,107,53,0)}}
+
+  /* i18n: 中英切換 */
+  body[data-lang="zh"] .en{display:none}
+  body[data-lang="en"] .zh{display:none}
+  span.zh,span.en{display:inline}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:24px;height:64px}
+  .brand{font-weight:900;color:var(--navy);font-size:19px;letter-spacing:-.5px;white-space:nowrap;text-decoration:none;cursor:pointer}
+  a.brand:hover{color:var(--royal)}
+  .brand b{color:var(--orange)}
+  .nav-links{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{position:relative;color:var(--muted);font-size:13px;font-weight:500;transition:color .2s;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--royal);border-radius:2px;transition:width .25s}
+  .nav-links a:hover{color:var(--royal)}
+  .nav-links a:hover::after{width:100%}
+  .lang-btn{margin-left:14px;border:1.5px solid var(--border,#E5E7EB);border:1.5px solid var(--line);color:var(--navy);background:#fff;border-radius:24px;padding:7px 16px;font-weight:700;font-size:12px;cursor:pointer;transition:.2s;white-space:nowrap}
+  .lang-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  /* ===== HERO（A 深色沉浸）===== */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#020E3A 0%,#042A7C 45%,#0847CC 100%);border-bottom:0;min-height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center}
+  .hero::before{content:"";position:absolute;width:820px;height:820px;border-radius:50%;background:var(--royal);opacity:.06;top:-320px;right:-220px;animation:float 13s ease-in-out infinite;pointer-events:none}
+  .hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:var(--amber);opacity:.05;bottom:-200px;left:-140px;animation:float2 16s ease-in-out infinite;pointer-events:none}
+  .hero .wrap{position:relative;z-index:1;width:100%}
+  .hero-in{display:grid;grid-template-columns:1.4fr .9fr;gap:64px;align-items:center;padding:40px 24px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,184,0,.1);border:1px solid rgba(255,184,0,.3);color:var(--amber);font-weight:700;font-size:12px;padding:6px 16px;border-radius:24px;letter-spacing:.04em}
+  .hero h1{font-size:clamp(38px,5.4vw,60px);font-weight:900;letter-spacing:-2px;margin:18px 0 6px;color:#fff}
+  .hero h1 .en{font-size:.5em;color:var(--sky);font-weight:400;letter-spacing:-.5px}
+  .hero .role{font-size:clamp(14px,1.9vw,18px);color:var(--sky);font-weight:600;margin-bottom:4px}
+  .hero .role2{font-size:clamp(12.5px,1.55vw,15px);color:var(--sky);font-weight:600;opacity:.92;margin-bottom:20px}
+  .hero .role .co-name,.hero .role2 .co-name{color:#fff;font-weight:800;margin-left:3px}
+  .hero .tagline{font-size:clamp(16px,1.9vw,20px);font-weight:800;color:#fff;line-height:1.5;margin:18px 0 4px;max-width:760px}
+  .hero .tagline b{color:var(--amber)}
+  .lead{font-size:15.5px;color:rgba(255,255,255,.7);max-width:560px;line-height:1.85}
+  .lead b{color:#fff;font-weight:700}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;line-height:1.5;padding:13px 28px;border-radius:10px;transition:.25s;cursor:pointer;border:0;letter-spacing:.2px}
+  .btn-primary{background:var(--orange);color:#fff;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(255,107,53,.32)}
+  .btn-primary::after{content:"";position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:shimmer 2.8s infinite 2s}
+  .btn-primary:hover{background:var(--orange-600);transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,53,.45)}
+  /* ghost：預設亮底（用於淺色 section） */
+  .btn-ghost{background:#fff;color:var(--royal);border:1.5px solid var(--blue-100)}
+  .btn-ghost:hover{border-color:var(--royal);background:var(--blue-50)}
+  /* ghost：深色情境（hero / AI）translucent */
+  .hero .btn-ghost,#ai .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.22)}
+  .hero .btn-ghost:hover,#ai .btn-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.45)}
+  .photo-wrap{position:relative;justify-self:center;width:212px;height:212px}
+  .photo-wrap::before,.photo-wrap::after{content:"";position:absolute;top:50%;left:50%;width:212px;height:212px;border-radius:50%;border:2px solid rgba(0,90,238,.4);transform:translate(-50%,-50%);animation:pring 3.2s ease-out infinite;pointer-events:none}
+  .photo-wrap::after{border-color:rgba(114,175,255,.3);animation-delay:1.1s}
+  .photo{width:212px;height:212px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 8px rgba(0,90,238,.18),0 24px 60px rgba(0,0,0,.4);border:4px solid rgba(255,255,255,.22);transform:none;position:relative;z-index:2}
+  .photo-wrap:hover .photo{transform:none}
+  .photo-blob{position:absolute;top:50%;left:50%;width:250px;height:250px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(0,90,238,.45),transparent 70%);filter:blur(10px);z-index:0;opacity:.7;inset:auto}
+  .photo-badge{position:absolute;bottom:-10px;right:-14px;z-index:3;background:var(--orange);color:#fff;border-radius:16px;padding:9px 18px;font-size:14px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:7px;box-shadow:0 6px 18px rgba(255,107,53,.5);animation:gpulse 2.6s ease-in-out infinite}
+
+  /* STATS（深底玻璃卡，可點擊跳轉）*/
+  .stat-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:0}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;position:relative;overflow:hidden;backdrop-filter:blur(4px);min-width:0}
+  a.stat{display:block;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+  a.stat:hover{transform:translateY(-4px);background:rgba(255,255,255,.11);border-color:rgba(255,184,0,.45)}
+  .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--orange),var(--amber))}
+  a.stat::after{content:"↓";position:absolute;top:12px;right:13px;width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:rgba(255,184,0,.14);color:var(--amber);font-size:14px;font-weight:800;transition:.2s}
+  a.stat:hover::after{background:var(--amber);color:var(--navy);transform:translateY(2px)}
+  a.stat:hover .lbl{color:#fff}
+  a.stat:hover .lbl span{text-decoration:underline;text-underline-offset:2px}
+  .stat-hint{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--sky);margin:36px 0 14px}
+  .stat-hint::before{content:"👇";font-size:14px}
+  .stat .num{font-size:26px;font-weight:900;color:var(--amber);line-height:1.1;letter-spacing:-1px;white-space:nowrap;padding-right:8px}
+  .stat .num .u{font-size:16px;color:var(--amber)}
+  .stat .lbl{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:5px;font-weight:500;line-height:1.45}
+  @media(max-width:1000px){.stat-row{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:760px){.hero-in{grid-template-columns:1fr;text-align:left;gap:40px}.photo-wrap{order:-1;justify-self:start}.stat-row{grid-template-columns:repeat(2,1fr)}}
+
+  /* ===== SECTION ===== */
+  .section{padding:96px 0;scroll-margin-top:78px}
+  .section.alt{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  @media(max-width:767px){.section{padding:60px 0}}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:10px;flex-wrap:wrap}
+  .sec-no{font-size:13px;font-weight:800;color:#fff;background:var(--navy);width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none}
+  .sec-sub{color:var(--body);font-size:16px;font-weight:500;line-height:1.85;margin:14px 0 44px;max-width:none}
+  .sec-sub b{color:var(--navy);font-weight:800}
+  /* 成果標題（摘要層）：02/03/04 共用 */
+  .outcome{display:flex;gap:8px;align-items:baseline;font-size:14px;font-weight:800;color:var(--royal);background:var(--blue-50);border-left:3px solid var(--orange);padding:9px 13px;border-radius:0 9px 9px 0;margin-top:10px}
+  .outcome::before{content:"✦";color:var(--orange);font-size:12px;flex:none}
+  #ai .outcome{background:rgba(255,255,255,.07);color:#fff}
+  #ai .outcome::before{color:var(--amber)}
+  a.outcome-link{text-decoration:none;cursor:pointer;flex-wrap:wrap}
+  a.outcome-link:hover{background:rgba(255,184,0,.16);border-color:var(--amber)}
+  a.outcome-link .ol-term{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--amber);text-decoration-thickness:2px}
+  a.outcome-link .ol-cta{margin-left:auto;flex:none;background:var(--amber);color:var(--navy);font-size:11.5px;font-weight:900;padding:4px 11px;border-radius:20px;white-space:nowrap;letter-spacing:.02em}
+  a.outcome-link:hover .ol-cta{background:#fff}
+  .reveal{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.16,.84,.44,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ABOUT */
+  #about{background:#fff}
+  .quote{background:linear-gradient(135deg,#F8FAFF,#F0F5FF);border-left:4px solid var(--royal);border-radius:0 16px 16px 0;padding:28px 30px;margin-top:6px;position:relative;overflow:hidden}
+  .quote::before{content:'"';position:absolute;top:-10px;left:14px;font-size:100px;color:var(--royal);opacity:.06;font-family:serif;line-height:1}
+  .quote:has(img)::before{top:58px}
+  .quote .label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gray);text-transform:uppercase}
+  .quote p{margin:12px 0 0;font-size:14.5px;color:var(--body);line-height:1.9;position:relative}
+  .quote p b{color:var(--navy);background:rgba(255,184,0,.18);padding:1px 4px;border-radius:3px}
+  .quote .src{font-size:12px;color:var(--muted);margin-top:12px}
+  .contact{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--body);box-shadow:var(--shadow)}
+  a.chip-cv{background:var(--royal);border-color:var(--royal);color:#fff;font-weight:800;text-decoration:none;transition:.18s}
+  a.chip-cv:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-2px)}
+  .chip a{color:var(--royal)}
+
+  /* ===== AI（A 深色沉浸）===== */
+  #ai{background:linear-gradient(180deg,#020E3A 0%,#031E6A 50%,#0A3B9E 100%);position:relative;overflow:hidden;border:0}
+  #ai::before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,90,238,.12),transparent);top:-100px;right:-100px;filter:blur(80px);pointer-events:none}
+  #ai::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.07),transparent);bottom:-80px;left:-80px;filter:blur(80px);pointer-events:none}
+  #ai .wrap{position:relative;z-index:1}
+  #ai h2{color:#fff!important}
+  #ai .sec-head h2 .zh,#ai .sec-head h2 .en{background:linear-gradient(transparent 62%,rgba(255,107,53,.5) 62%)}
+  #ai .sec-no{background:rgba(255,255,255,.1);color:#fff}
+  #ai .sec-sub{color:rgba(255,255,255,.82)!important}
+  #ai .sec-sub b{color:#fff}
+  .guardrails{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:-18px 0 40px}
+  .guardrails .gr-lbl{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--amber);text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+  .guardrails .gr-tag{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.92);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);padding:5px 12px;border-radius:24px}
+  #ai h4{color:#fff!important}
+  #ai>.wrap>h4{font-size:15px;font-weight:700;letter-spacing:.3px}
+
+  /* agent map（深色）*/
+  .map-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;box-shadow:none;padding:8px;overflow-x:auto;margin-bottom:34px}
+  table.map{border-collapse:collapse;width:100%;min-width:640px}
+  table.map th,table.map td{padding:13px 10px;text-align:center;font-size:13.5px}
+  table.map thead th{color:rgba(255,255,255,.5);font-size:12px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.12)}
+  table.map thead th.ag{color:#fff;font-weight:700;cursor:pointer;border-radius:10px 10px 0 0;transition:.15s}
+  table.map thead th.ag:hover,table.map thead th.ag.hot{background:rgba(255,255,255,.08);color:var(--amber)}
+  table.map tbody th{text-align:left;color:rgba(255,255,255,.85);font-weight:600;font-size:13px;white-space:nowrap;padding-left:6px}
+  table.map td{color:rgba(255,255,255,.25);font-weight:800;font-size:15px;border-bottom:1px solid rgba(255,255,255,.05)}
+  table.map td.y{color:var(--amber);font-size:19px;font-weight:900}
+  table.map td.hot{background:rgba(255,255,255,.06)}
+  table.map td.y.hot{color:#FFD150}
+  table.map tr:hover td{background:rgba(255,255,255,.04)}
+
+  /* methodology（深色玻璃）*/
+  .method{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:44px}
+  .mcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px;box-shadow:none;transition:.25s;position:relative;overflow:hidden}
+  .mcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--amber));opacity:0;transition:.25s}
+  .mcard:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
+  .mcard:hover::before{opacity:1}
+  .mcard h4{color:#fff!important;font-size:15px;display:flex;gap:9px;align-items:center;font-weight:700}
+  .mcard h4 .n{background:var(--amber);color:var(--navy);font-size:12px;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;flex:none;font-weight:800}
+  .mlist{list-style:none;padding:0;margin:14px 0 0}
+  .mlist li{position:relative;padding-left:18px;font-size:13px;color:rgba(255,255,255,.62);margin-bottom:11px;line-height:1.7}
+  .mlist li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+  .mlist li b{color:#fff}
+  @media(max-width:760px){.method{grid-template-columns:1fr}}
+
+  /* AGENT CARDS（手風琴，深色玻璃，互動保留）*/
+  .acard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:none;margin-bottom:14px;overflow:hidden;transition:.2s}
+  .acard.open{background:rgba(255,255,255,.05);border-color:rgba(255,107,53,.4)}
+  .acard.open .acard-head{background:rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.14)}
+  .acard.open .acard-body{background:rgba(2,10,40,.45)}
+  .acard-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
+  .acard-head:hover{background:rgba(255,255,255,.04)}
+  .acode{font-weight:900;color:#fff;background:linear-gradient(135deg,var(--orange),var(--amber));min-width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:16px;flex:none}
+  .acard-head .ttl-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 14px}
+  .acard-head .ttl{font-weight:800;font-size:17px;color:#fff}
+  .acard-head .atake{font-size:13.5px;font-weight:800;color:var(--amber);display:inline-flex;align-items:baseline;gap:7px;line-height:1.45}
+  .acard-head .atake::before{content:"✦";color:var(--amber)}
+  .acard-head a.atake{text-decoration:none;cursor:pointer}
+  .acard-head a.atake:hover{opacity:.85}
+  .acard-head .atake .ol-cta{margin-left:2px}
+  .acard-head .typ{font-size:12px;color:var(--amber);font-weight:700;background:rgba(255,184,0,.12);padding:3px 10px;border-radius:24px;display:inline-block;margin-top:3px}
+  .acard-head .use{font-size:13.7px;color:rgba(255,255,255,.62);margin-top:7px;line-height:1.62}
+  .toggle{margin-left:auto;flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);color:#fff;display:grid;place-items:center;font-size:18px;transition:.25s}
+  .acard.open .toggle{transform:rotate(45deg);background:var(--orange);color:#fff;border-color:var(--orange)}
+  .acard-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .abody-in{padding:4px 22px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .block h5{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .block ul{margin:0;padding-left:0;list-style:none;font-size:13.5px;color:rgba(255,255,255,.76)}
+  .block ul li{margin-bottom:8px;padding-left:16px;position:relative;line-height:1.7}
+  .block ul li::before{content:"✦";color:var(--amber);font-size:9px;position:absolute;left:0;top:6px}
+  .block ul li b{color:#fff}
+  .iter{background:rgba(255,184,0,.06);border:1px solid rgba(255,184,0,.2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.7}
+  .iter b{color:var(--amber)}
+  /* before/after（深色）*/
+  .ba{grid-column:1/-1;display:grid;grid-template-columns:.82fr auto 1.3fr;gap:12px;align-items:stretch;background:transparent;border-radius:14px;padding:0}
+  .ba .col{padding:16px 18px;border-radius:12px;position:relative}
+  /* Before：弱化、降彩度 */
+  .ba .before{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);opacity:.8}
+  .ba .before .tag{color:rgba(255,255,255,.5)}
+  .ba .before p{color:rgba(255,255,255,.55)}
+  /* After：放大、加亮、微光 */
+  .ba .after{background:linear-gradient(135deg,rgba(114,175,255,.18),rgba(114,175,255,.05));border:1.5px solid rgba(114,175,255,.5);box-shadow:0 0 28px rgba(114,175,255,.16)}
+  .ba .after .tag{color:var(--sky)}
+  .ba .after p{color:#fff;font-size:13.5px}
+  .ba .tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .ba p{margin:8px 0 0;font-size:13px;line-height:1.7}
+  .ba .vs{display:grid;place-items:center;color:var(--amber);font-weight:900;font-size:24px}
+  /* 關鍵數字徽章 */
+  .ba-impact{display:inline-flex;align-items:center;gap:5px;background:var(--amber);color:var(--navy);font-size:12.5px;font-weight:900;padding:5px 12px;border-radius:24px;margin-bottom:10px;box-shadow:0 4px 14px rgba(255,184,0,.3)}
+  /* 時間對比長條 */
+  .ba-bar{grid-column:1/-1;margin-top:2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:13px 16px;display:grid;gap:9px}
+  .ba-bar .bar-row{display:grid;grid-template-columns:50px 1fr auto;align-items:center;gap:10px}
+  .ba-bar .bar-lbl{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  .ba-bar .bar-row.b .bar-lbl{color:rgba(255,255,255,.5)}
+  .ba-bar .bar-row.a .bar-lbl{color:var(--sky)}
+  .ba-bar .bar-track{position:relative;height:16px;background:rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+  .ba-bar .bar-fill{position:absolute;left:0;top:0;height:100%;border-radius:6px}
+  .ba-bar .bar-row.b .bar-fill{background:rgba(255,255,255,.3)}
+  .ba-bar .bar-row.a .bar-fill{background:linear-gradient(90deg,var(--sky),var(--royal));box-shadow:0 0 10px rgba(114,175,255,.55)}
+  .ba-bar .bar-saved{position:absolute;top:0;bottom:0;display:flex;align-items:center;justify-content:center;border-radius:0 6px 6px 0;background:repeating-linear-gradient(45deg,rgba(255,184,0,.32),rgba(255,184,0,.32) 7px,rgba(255,184,0,.15) 7px,rgba(255,184,0,.15) 14px);font-size:9.5px;font-weight:900;color:#FFE08A;letter-spacing:.04em;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+  .ba-bar .bar-val{font-size:12px;font-weight:800;color:#fff;white-space:nowrap}
+  .demo-link{grid-column:1/-1;margin-top:4px}
+  /* DEMO 擬瀏覽器（深色）*/
+  .demo-frame{grid-column:1/-1;margin-top:6px;border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;box-shadow:none;background:rgba(255,255,255,.03)}
+  .demo-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.1)}
+  .demo-dots{display:flex;gap:5px;flex:none}
+  .demo-dots i{width:10px;height:10px;border-radius:50%;display:block}
+  .demo-url{flex:1;font-size:11.5px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .demo-scroll{height:380px;overflow-y:auto;overflow-x:hidden;background:#fff}
+  .demo-scroll img{width:100%;display:block}
+  .demo-actions{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 12px;background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.1)}
+  .demo-actions .hint{font-size:12px;color:rgba(255,255,255,.55)}
+  .demo-actions .btn{font-size:13.5px;padding:9px 18px}
+  @media(max-width:680px){.abody-in{grid-template-columns:1fr}.ba{grid-template-columns:1fr}.ba .vs{transform:rotate(90deg)}}
+
+  /* ===== STRATEGY ===== */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;position:relative;overflow:hidden;transition:.22s}
+  .scard:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+  .scard .badge{position:absolute;top:0;right:0;z-index:2;background:var(--orange);color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:0 0 0 12px;letter-spacing:.04em}
+  .scard-cover{display:block;width:calc(100% + 52px);margin:-26px -26px 22px;padding:0;border:0;background:var(--blue-50);cursor:zoom-in;overflow:hidden;aspect-ratio:16/9;position:relative}
+  .scard-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .scard-cover:hover img{transform:scale(1.045)}
+  .scard-cover::after{content:"🔍";position:absolute;bottom:10px;right:12px;width:30px;height:30px;display:grid;place-items:center;background:rgba(4,42,124,.55);border-radius:50%;font-size:14px;opacity:0;transition:.2s}
+  .scard-cover:hover::after{opacity:1}
+  .scard h3{font-size:19px;color:var(--navy);margin-bottom:6px;padding-right:80px;font-weight:800}
+  .scard .intent{font-size:13.5px;color:var(--body);background:var(--blue-50);border-radius:10px;padding:11px 14px;margin:10px 0 16px;line-height:1.75}
+  .scard h6{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);font-weight:700;margin:14px 0 8px}
+  .scard ul{margin:0;padding-left:18px;font-size:14px;color:var(--body)}
+  .scard ul li{margin-bottom:8px;line-height:1.7}
+  .scard ul li b{color:var(--navy)}
+  .pillars{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .pillar{font-size:12.5px;font-weight:600;color:var(--navy);background:var(--blue-50);border:1px solid var(--blue-100);padding:6px 14px;border-radius:24px}
+  a.pillar{cursor:pointer;text-decoration:none;transition:.18s}
+  a.pillar:hover{background:var(--blue-100);border-color:var(--blue);color:var(--royal);transform:translateY(-2px)}
+  a.pillar::after{content:"↘";font-size:10px;opacity:.55;margin-left:5px}
+  .filelinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .arch-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 2px}
+  .arch-card{background:var(--blue-50);border:1px solid var(--blue-100);border-radius:12px;padding:13px 14px;transition:.2s}
+  .arch-card:hover{border-color:var(--royal);box-shadow:var(--shadow);transform:translateY(-2px)}
+  .arch-card .ac-h{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
+  .arch-card .ac-ic{font-size:17px;line-height:1;flex:none}
+  .arch-card p{margin:0;font-size:12.5px;color:var(--body);line-height:1.6}
+  .arch-card p b{color:var(--navy)}
+  @media(max-width:560px){.arch-grid{grid-template-columns:1fr}}
+
+  /* ===== CAMPAIGNS ===== */
+  .camp-hero{background:linear-gradient(135deg,#042A7C,#0847CC);border-radius:var(--radius);padding:32px;color:#fff;box-shadow:var(--shadow-lg);margin-bottom:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;position:relative;overflow:hidden}
+  .camp-hero .big{font-size:42px;font-weight:900;line-height:1;letter-spacing:-1px}
+  .camp-hero .big .u{font-size:20px;color:var(--amber)}
+  .camp-hero .desc{font-size:14.5px;opacity:.92;max-width:none;line-height:1.75}
+  .camp-hero>div:first-child{flex:1 1 320px}
+  .camp-hero .yoy{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:14px 22px;text-align:center}
+  .camp-hero .yoy .v{font-size:30px;font-weight:900;color:var(--amber)}
+  .camp-hero .yoy .k{font-size:12px;opacity:.9}
+  .camp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:820px){.camp-grid{grid-template-columns:1fr}}
+  .ccard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden;box-shadow:var(--shadow);transition:.22s;border-top:4px solid var(--orange);display:flex;flex-direction:column}
+  .ccard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .ccard-img{display:block;width:100%;border:0;padding:0;margin:0;background:var(--blue-50);aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+  .ccard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+  .ccard-img:hover img{transform:scale(1.05)}
+  .ccard-pad{padding:20px;display:flex;flex-direction:column;flex:1}
+  .ccard h4{font-size:17px;color:var(--navy);font-weight:800}
+  .ccard .metrics{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .metric{background:var(--blue-50);border-radius:10px;padding:9px 12px;flex:1;min-width:110px}
+  .metric .v{font-size:19px;font-weight:800;color:var(--navy)}
+  .metric .k{font-size:11.5px;color:var(--muted);font-weight:600}
+  .ccard-gallery{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;cursor:grab;margin:2px 0 14px;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--blue-100) transparent;overscroll-behavior-x:contain}
+  .ccard-gallery.drag{cursor:grabbing;scroll-snap-type:none}
+  .ccard-gallery::-webkit-scrollbar{height:7px}
+  .ccard-gallery::-webkit-scrollbar-thumb{background:var(--blue-100);border-radius:20px}
+  .ccard-gallery::-webkit-scrollbar-track{background:transparent}
+  .ccard-gallery{align-items:flex-start}
+  .gthumb{flex:0 0 100%;scroll-snap-align:center;border:1px solid var(--line);border-radius:11px;overflow:hidden;padding:0;margin:0;background:var(--blue-50);cursor:zoom-in}
+  .gthumb img{width:100%;height:auto;display:block;pointer-events:none}
+  .ccard-pad>:last-child{margin-top:auto}
+  .cc-meta{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--muted);margin:9px 0 0}
+  .cc-desc{font-size:13.5px;color:var(--body);line-height:1.72;margin:10px 0 0}
+  .cc-res{font-size:12.7px;color:var(--body);line-height:1.65;margin:10px 0 2px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+  .cc-res .cc-res-lbl{display:block;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:4px}
+  .cc-res b{color:var(--navy)}
+  /* ===== 通案區：透氣 / 精緻 / 成效分隔（僅 #campaign）===== */
+  #campaign .camp-hero{border-radius:20px;padding:36px;box-shadow:0 16px 52px rgba(4,42,124,.12)}
+  #campaign .camp-grid{gap:22px}
+  #campaign .ccard{border:1px solid #EEF1F7;border-top:0;border-radius:20px;box-shadow:0 12px 46px rgba(4,42,124,.06)}
+  #campaign .ccard-pad{padding:24px}
+  #campaign .cc-desc{margin-top:12px;line-height:1.75}
+  /* 成效數字獨立成淡色面板，與描述分隔 */
+  #campaign .ccard .metrics{background:#F5F8FE;border:1px solid #E9EEF8;border-radius:12px;padding:12px 6px;margin:16px 0;gap:0}
+  #campaign .ccard .metric{background:transparent;padding:4px 12px;flex:1}
+  #campaign .ccard .metric + .metric{border-left:1px solid #E1E8F5}
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(2,14,58,.92);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:95vw;max-height:90vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .lb-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:.18s}
+  .lb-close:hover{background:var(--orange);color:#fff}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:32px;line-height:1;cursor:pointer;transition:.18s;display:grid;place-items:center;z-index:2;padding-bottom:4px}
+  .lb-nav:hover{background:var(--orange)}
+  .lb-prev{left:22px}
+  .lb-next{right:22px}
+  .lb-nav[hidden]{display:none}
+  .lb-count{position:absolute;top:24px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:14px;font-weight:800;letter-spacing:.06em;pointer-events:none}
+  @media(max-width:600px){.lb-nav{width:42px;height:42px;font-size:26px}.lb-prev{left:8px}.lb-next{right:8px}}
+  .lb-hint{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-size:13px}
+  /* 提案畫面 gallery */
+  .pgal{margin-top:16px}
+  .pgal-cap{font-size:11px;letter-spacing:.06em;color:var(--gray);font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .pgal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:680px){.pgal-grid{grid-template-columns:repeat(2,1fr)}}
+  .pgal-thumb{border:1px solid var(--line);border-radius:10px;overflow:hidden;padding:0;background:var(--blue-50);cursor:zoom-in;aspect-ratio:16/9;transition:.18s}
+  .pgal-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .pgal-thumb:hover{border-color:var(--royal);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .pgal-item{display:flex;flex-direction:column;margin:0}
+  .pgal-item .pgal-thumb{width:100%}
+  .pgal-label{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.35;text-align:center}
+  /* 收合式圖庫 toggle */
+  .galtoggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:18px;padding:12px 16px;background:var(--blue-50);border:1px solid var(--blue-100);border-radius:10px;cursor:pointer;font-weight:700;font-size:13.5px;color:var(--royal);text-align:left;transition:.18s}
+  .galtoggle:hover{background:var(--blue-100)}
+  .galtoggle .gt-meta{display:flex;align-items:center;gap:9px;flex:none}
+  .galtoggle .gt-n{font-size:12px;background:#fff;color:var(--royal);border-radius:24px;padding:2px 10px;font-weight:800}
+  .galtoggle .gt-ar{font-size:18px;line-height:1;transition:.25s;display:inline-block}
+  .galtoggle.open .gt-ar{transform:rotate(45deg)}
+  .galwrap{display:none;margin-top:12px}
+  .galwrap.open{display:block;animation:galfade .3s ease}
+  @keyframes galfade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* ===== PROPOSALS (timeline) ===== */
+  .tl{position:relative;margin-top:10px;padding-left:30px}
+  .tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--royal),var(--amber))}
+  .tnode{position:relative;margin-bottom:18px}
+  .tnode::before{content:"";position:absolute;left:-29px;top:22px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--royal);box-shadow:0 0 0 4px var(--blue-50)}
+  .tbox{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+  .tbox-head{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer}
+  .tbox-head:hover{background:var(--blue-50)}
+  .tbox-head .date{font-size:12px;font-weight:800;color:#fff;background:var(--royal);padding:4px 10px;border-radius:24px;flex:none}
+  .tbox-head .bn{font-size:18px;font-weight:800;color:var(--navy)}
+  .tbox-head .bn .co{font-weight:600;font-size:12.5px;color:#6B7280;margin-left:7px;letter-spacing:0}
+  .tbox-head .bg-{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.6}
+  .tbox-head .tbox-thesis{margin:0 0 10px;font-size:22px;font-weight:900;color:var(--navy);line-height:1.45;letter-spacing:-.5px}
+  @media(max-width:680px){.tbox-head .tbox-thesis{font-size:18px}}
+  .tbox-head .tbox-hl{display:inline-flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-top:9px;font-size:13.5px;color:var(--amber-600);background:linear-gradient(135deg,rgba(255,184,0,.15),rgba(255,184,0,.04));border:1px solid rgba(255,184,0,.45);padding:6px 12px;border-radius:24px}
+  .tbox-head .tbox-hl b{font-weight:800;color:var(--amber-600)}
+  .tbox-head .tbox-hl .hl-sub{font-weight:600;color:var(--gray)}
+  .tbox-head .toggle{margin-left:auto;border-color:var(--blue-100);color:var(--royal)}
+  .tbox.open{border-color:var(--blue-100);box-shadow:var(--shadow-lg)}
+  .tbox.open .toggle{transform:rotate(45deg);background:var(--royal);color:#fff;border-color:var(--royal)}
+  .tbox-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .tbody-in{padding:2px 22px 22px}
+  /* ===== 提案區：透氣 / 精緻化（僅 #proposal）===== */
+  #proposal .sec-sub{margin-bottom:56px}
+  #proposal .tnode{margin-bottom:30px}
+  #proposal .tnode::before{top:34px;box-shadow:0 0 0 5px #fff,0 0 0 7px var(--blue-100)}
+  #proposal .tbox{border:1px solid #EEF1F7;border-radius:22px;box-shadow:0 12px 46px rgba(4,42,124,.06)}
+  #proposal .tbox.open{border-color:#E3EAF6;box-shadow:0 20px 64px rgba(4,42,124,.10)}
+  /* 展開後：標題區塊與內容區以不同底色分隔 */
+  #proposal .tbox.open .tbox-head{background:#F5F8FE;border-bottom:1px solid #E7EDF8}
+  #proposal .tbox.open .tbody-in{padding-top:22px}
+  #proposal .tbox-head{padding:28px 32px;gap:18px}
+  #proposal .tbody-in{padding:6px 32px 32px}
+  #proposal .tbox-head .bg-{line-height:1.75;margin-top:6px}
+  #proposal .tbox-head .tbox-thesis{margin-bottom:12px}
+  /* 收斂色彩：成果 chip 去漸層、改柔和奶色 */
+  #proposal .tbox-head .tbox-hl{background:#FBF7EC;border-color:#EFE3C2;padding:7px 14px;margin-top:12px}
+  .result{background:linear-gradient(135deg,rgba(255,184,0,.12),#fff);border:1px solid rgba(255,184,0,.5);border-radius:12px;padding:13px 16px;margin-top:14px;font-size:14px}
+  .result .tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--amber-600)}
+  .result p{margin:5px 0 0;color:var(--navy);font-weight:600}
+  .mot{display:grid;gap:10px;margin-top:6px}
+  .mot .row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+  .mot .pain{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px}
+  .mot .sol{background:var(--blue-50);border:1px solid var(--blue-100);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--navy)}
+  .mot .ar{color:var(--orange);font-weight:900;text-align:center}
+  @media(max-width:680px){.mot .row{grid-template-columns:1fr}.mot .ar{transform:rotate(90deg)}}
+  /* 提案卡 redesign（範例：三星）*/
+  .tl-hl{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#042A7C,#0847CC);border-radius:14px;padding:15px 20px;margin:6px 0 18px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .tl-hl::after{content:"成果 · RESULT";position:absolute;top:9px;right:14px;font-size:9px;font-weight:800;letter-spacing:.1em;color:var(--amber);opacity:.85}
+  .tl-hl-ic{font-size:30px;flex:none;line-height:1}
+  .tl-hl-big{font-size:18px;font-weight:900;color:#fff;line-height:1.3;letter-spacing:-.3px}
+  .tl-hl-big b{color:var(--amber)}
+  .tl-hl-sub{font-size:12px;color:rgba(255,255,255,.82);margin-top:3px}
+  .tl-cols{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;align-items:start;margin-bottom:2px}
+  @media(max-width:680px){.tl-cols{grid-template-columns:1fr;gap:16px}.tl-role,.mot2{grid-template-columns:1fr}}
+  .tl-h5{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);font-weight:800;margin:0 0 10px}
+  .tl-role{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:9px 28px}
+  .tl-role li{position:relative;padding-left:18px;font-size:13px;color:var(--body);line-height:1.7;margin:0}
+  .tl-role li::before{content:"▹";position:absolute;left:0;color:var(--royal);font-weight:900}
+  .tl-role li b{color:var(--navy)}
+  .mot2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mot2-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .mot2-pain{font-size:12.5px;color:var(--body);line-height:1.55;display:flex;gap:8px;align-items:flex-start}
+  .mot2-arr{color:var(--orange);font-weight:900;font-size:15px;text-align:center;margin:5px 0}
+  .mot2-sol{font-size:12.5px;color:var(--navy);font-weight:600;line-height:1.55;background:var(--blue-50);border:1px solid var(--blue-100);border-radius:9px;padding:9px 11px;display:flex;gap:8px;align-items:flex-start}
+  .mot2-tag{flex:none;font-size:9px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--gray);border-radius:5px;padding:2px 6px;margin-top:1px}
+  .mot2-tag.sol{background:var(--royal)}
+  .tl-hl.status{background:linear-gradient(135deg,#3C4A66,#586A8F)}
+  .tl-hl.status::after{content:"進行中 · IN PROGRESS"}
+  .tl-intro{font-size:13px;color:var(--body);line-height:1.7;margin:0;background:var(--blue-50);border-left:3px solid var(--royal);border-radius:0 8px 8px 0;padding:11px 14px}
+  .tl-intro b{color:var(--navy)}
+  .rpt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:680px){.rpt-grid{grid-template-columns:1fr}}
+  .rpt-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 15px}
+  .rpt-card .rpt-no{font-size:24px;font-weight:900;color:var(--royal);opacity:.4;line-height:1;margin-bottom:6px}
+  .rpt-card p{margin:0;font-size:12.5px;color:var(--body);line-height:1.6}
+  .rpt-card p b{color:var(--navy)}
+
+  /* ===== COLLAB (tabs + cards) ===== */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+  .tab{padding:9px 20px;border-radius:24px;border:1.5px solid var(--line);background:#fff;color:var(--muted);font-weight:600;font-size:14px;cursor:pointer;transition:.18s}
+  .tab:hover{border-color:var(--blue-100);color:var(--royal)}
+  .tab.on{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 6px 16px rgba(255,107,53,.32)}
+  .collab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.22s;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .pcard.hide{display:none}
+  .pthumb{aspect-ratio:16/9;background:linear-gradient(135deg,var(--blue-50),var(--blue-100));position:relative;overflow:hidden}
+  .pthumb img{width:100%;height:100%;object-fit:cover}
+  .pthumb .play{position:absolute;inset:0;display:grid;place-items:center;cursor:pointer;text-decoration:none;transition:.2s}
+  .pthumb .play:hover{background:rgba(0,0,0,.12)}
+  .pthumb .play span{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:20px;color:var(--royal);box-shadow:var(--shadow);transition:.2s}
+  .pthumb .play:hover span{background:#fff;transform:scale(1.08);color:var(--orange)}
+  .pthumb .kind{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:24px}
+  .pthumb.noimg{display:grid;place-items:center;color:var(--royal);font-size:40px}
+  /* collab 輪播 */
+  .collab-eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--orange);margin:6px 0 16px;display:flex;align-items:center;gap:7px}
+  .pthumb .cslides{display:flex;height:100%;transition:transform .35s ease}
+  .pthumb .cslide{min-width:100%;height:100%;position:relative;padding:0;border:0;margin:0;background:var(--blue-50);overflow:hidden;display:block}
+  .pthumb button.cslide{cursor:zoom-in}
+  .pthumb .cslide img{width:100%;height:100%;object-fit:cover;display:block}
+  .pthumb .carr{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.82);color:var(--navy);font-size:19px;line-height:1;cursor:pointer;display:grid;place-items:center;z-index:4;transition:.15s;padding-bottom:2px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .pthumb .carr:hover{background:#fff}
+  .pthumb .carr.prev{left:8px}
+  .pthumb .carr.next{right:8px}
+  .pthumb .cdots{position:absolute;bottom:9px;left:0;right:0;display:flex;gap:6px;justify-content:center;z-index:4}
+  .pthumb .cdot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.15s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  .pthumb .cdot.on{background:#fff;width:18px;border-radius:4px}
+  /* collab 卡片內：可展開結果頁 */
+  .pcard-in .cx{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .pcard-in .cx>summary{list-style:none;cursor:pointer;padding:10px 13px;font-size:13px;font-weight:800;color:var(--royal);display:flex;align-items:center;gap:8px;user-select:none}
+  .pcard-in .cx>summary::-webkit-details-marker{display:none}
+  .pcard-in .cx>summary:hover{background:var(--blue-50)}
+  .pcard-in .cx>summary::after{content:"+";margin-left:auto;font-weight:800;font-size:16px}
+  .pcard-in .cx[open]>summary::after{content:"×"}
+  .pcard-in .cx .cx-n{background:var(--blue-50);color:var(--royal);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:800}
+  .cx-grid{grid-template-columns:repeat(2,1fr);padding:4px 13px 13px;gap:8px}
+  .cx-grid .pgal-thumb{aspect-ratio:3/4}
+  /* 幻燈片 deck（橫向捲動）*/
+  .deckwrap{margin-top:16px}
+  .deck-lbl{font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--gray);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+  .deck-lbl .cx-n{background:var(--blue-50);color:var(--royal);border-radius:20px;padding:1px 8px;font-size:11px;font-weight:800}
+  /* 收合式 deck（品牌卡片：點擊展開）*/
+  details.deckx{margin-top:16px}
+  details.deckx>summary{list-style:none;cursor:pointer;margin-bottom:0;padding:2px 0}
+  details.deckx>summary::-webkit-details-marker{display:none}
+  details.deckx>summary:hover{color:var(--body)}
+  details.deckx>summary .dx-ar{margin-left:auto;width:22px;height:22px;border-radius:6px;border:1.5px solid var(--blue-100);color:var(--royal);display:grid;place-items:center;font-weight:800;transition:.2s;flex:none}
+  details.deckx[open]>summary .dx-ar{transform:rotate(45deg);background:var(--royal);color:#fff;border-color:var(--royal)}
+  details.deckx .deck-scroll{margin-top:10px}
+  .deck-scroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 9px;cursor:grab;scrollbar-width:thin;scrollbar-color:var(--blue-100) transparent;overscroll-behavior-x:contain}
+  .deck-scroll.drag{cursor:grabbing;scroll-snap-type:none}
+  .deck-scroll::-webkit-scrollbar{height:7px}
+  .deck-scroll::-webkit-scrollbar-thumb{background:var(--blue-100);border-radius:20px}
+  .deck-scroll::-webkit-scrollbar-track{background:transparent}
+  .deck-scroll .dfig{flex:0 0 90%;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;gap:7px}
+  .deck-scroll.portrait .dfig{flex:0 0 47%}
+  .deck-scroll .dslide{display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;margin:0;border-radius:11px;overflow:hidden;background:#0a1633;cursor:zoom-in}
+  .deck-scroll.portrait .dslide{aspect-ratio:3/4;background:var(--blue-50)}
+  .deck-scroll .dslide img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .deck-scroll .dcap{font-size:12px;color:var(--gray);line-height:1.45;text-align:center;padding:0 4px}
+  .pcard-in{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .pcard-in .pb{font-size:12px;color:var(--orange);font-weight:700;letter-spacing:.5px}
+  .pcard-in h4{font-size:16px;margin:4px 0 8px;color:var(--navy);font-weight:800}
+  .pcard-in p{font-size:14px;color:var(--body);margin:0 0 14px;line-height:1.72}
+  .pcard-in .pm{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .pcard-in .pm span{font-size:13px;font-weight:600;color:var(--body);background:var(--blue-50);padding:5px 10px;border-radius:8px;border:1px solid var(--blue-100)}
+  .pcard-in .pm span b{font-weight:900;color:var(--navy);font-size:13.5px}
+  .pcard-in .links{margin-top:auto;display:flex;gap:12px;flex-wrap:wrap}
+  .pcard-in .links a{font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:5px}
+
+  .extlink{font-size:13px;font-weight:700;color:var(--royal);display:inline-flex;align-items:center;gap:5px}
+  .extlink::after{content:"↗";font-size:12px;opacity:.7}
+
+  /* 工作方法 band */
+  .howband{background:linear-gradient(135deg,#042A7C,#001a52);color:#fff;padding:64px 0;scroll-margin-top:78px}
+  .howband .hb-head{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);text-align:center;margin-bottom:34px}
+  .howband .hb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .howband .hb-item{text-align:center;padding:0 16px}
+  .howband .hb-ic{font-size:34px;margin-bottom:12px}
+  .howband .hb-item h5{font-size:19px;font-weight:800;margin:0 0 9px;color:#fff}
+  .howband .hb-item p{font-size:14px;color:rgba(255,255,255,.72);line-height:1.75;margin:0;word-break:keep-all;overflow-wrap:break-word}
+  @media(max-width:760px){.howband .hb-grid{grid-template-columns:1fr;gap:30px}}
+
+  /* 推薦語（點擊展開）*/
+  .testi{margin-top:26px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .testi>summary{list-style:none;cursor:pointer;padding:16px 20px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px;font-size:15.5px;user-select:none}
+  .testi>summary::-webkit-details-marker{display:none}
+  .testi>summary:hover{background:var(--blue-50)}
+  .testi[open]>summary{background:var(--navy);color:#fff}
+  .testi>summary .meta{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:10px}
+  .testi[open]>summary .meta{color:rgba(255,255,255,.72)}
+  .testi>summary .ar{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;border:1.5px solid var(--blue-100);color:var(--royal);font-weight:800;transition:.2s;flex:none}
+  .testi[open]>summary .ar{transform:rotate(45deg);background:var(--amber);color:var(--navy);border-color:var(--amber)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px 20px 22px;background:#F4F7FE;border-top:1px solid var(--line)}
+  .testi-grid blockquote{margin:0;background:#fff;border:1px solid var(--blue-100);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(4,42,124,.05)}
+  .testi-grid blockquote p{margin:0 0 12px;font-size:13.8px;line-height:1.82;color:var(--body)}
+  .testi-grid blockquote p b{color:var(--navy);font-weight:800}
+  .testi-grid blockquote .who{margin-top:auto;font-weight:800;color:var(--navy);font-size:12.5px}
+  .testi-grid blockquote .who::before{content:"— "}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.testi>summary .meta .txt{display:none}}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:#fff;padding:48px 0;text-align:center}
+  footer .ft-name{font-size:22px;font-weight:900;letter-spacing:-.5px}
+  footer .ft-c{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  footer a{color:#fff;font-weight:600;background:rgba(255,255,255,.12);padding:9px 16px;border-radius:24px;font-size:14px}
+  footer a.ft-cv{background:var(--orange);font-weight:800}
+  footer a.ft-cv:hover{background:#fff;color:var(--navy)}
+  footer a:hover{background:var(--orange);color:#fff}
+  footer .tip{font-size:12.5px;opacity:.6;margin-top:22px}
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body data-lang="zh">
+
+<!-- ===== NAV ===== -->
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top">許芸瑄 <b>Vivien Hsu</b></a>
+  <div class="nav-links">
+    <a href="#about"><span class="zh">簡介</span><span class="en">About</span></a>
+    <a href="#ai"><span class="zh">AI 應用</span><span class="en">AI</span></a>
+    <a href="#strategy"><span class="zh">銷售策略</span><span class="en">Strategy</span></a>
+    <a href="#campaign"><span class="zh">年度通案</span><span class="en">Campaigns</span></a>
+    <a href="#proposal"><span class="zh">品牌提案</span><span class="en">Proposals</span></a>
+    <a href="#collab"><span class="zh">合作成果</span><span class="en">Work</span></a>
+  </div>
+  <button class="lang-btn" id="langBtn">EN</button>
+</div></nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top"><div class="wrap hero-in">
+  <div>
+    <span class="eyebrow">💼 <span class="zh">廣告策略 × 商業開發 × AI 應用</span><span class="en">Ad Strategy × Business Development × AI</span></span>
+    <h1>許芸瑄 <span class="en">Vivien Hsu</span></h1>
+    <div class="role"><span class="zh">Senior Marketing Strategist · Project Lead <span class="co-name">— Dcard</span></span><span class="en">Senior Marketing Strategist · Project Lead <span class="co-name">— Dcard</span></span></div>
+    <div class="role2"><span class="zh">PR Consultant <span class="co-name">— VOCAL MIDDLE</span></span><span class="en">PR Consultant <span class="co-name">— VOCAL MIDDLE</span></span></div>
+    <p class="tagline"><span class="zh">用 <b>AI 與數據</b>強化廣告策略，把提案變成<b>客戶買單的商業決策</b></span><span class="en">Sharpening ad strategy with <b>AI and data</b> — turning proposals into <b>decisions clients buy into</b></span></p>
+    <p class="lead">
+      <span class="zh"><b>5 年以上</b>橫跨廣告行銷、策略規劃與商業開發經驗，擅長發掘市場機會、將想法轉化為可執行策略並轉換營收。具備跨部門整合、團隊管理與人才培育能力——無論為品牌、為組織、為自己，「<b>發揮最大影響力</b>」就是我的成就感來源。</span>
+      <span class="en"><b>5+ years</b> across advertising, strategy, and business development. I'm good at spotting the opportunity others miss, turning it into a plan that ships, and turning that into revenue. I build teams, lead them, and grow the people on them — because <b>making real impact</b> is what I'm here for.</span>
+    </p>
+  </div>
+  <div class="photo-wrap">
+    <div class="photo-blob"></div>
+    <img class="photo" src="https://megapx-assets.dcard.tw/images/c548314b-0ba0-48ad-aeb3-9a44934a7b08/orig.jpeg" alt="許芸瑄 Vivien Hsu" loading="lazy"/>
+    <div class="photo-badge">🟢 <span class="zh">Open to work</span><span class="en">Open to work</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stat-hint"><span class="zh">點擊卡片可跳至對應作品段落</span><span class="en">Tap a card to jump to that section</span></div>
+  <div class="stat-row">
+    <a class="stat" href="#ai"><div class="num" data-count="5">0</div><div class="lbl"><span class="zh">自建 AI Agent</span><span class="en">Self-built AI Agents</span></div></a>
+    <a class="stat" href="#strategy"><div class="num"><span data-count="100">0</span><span class="u zh">+ 頁</span><span class="u en">+ pages</span></div><div class="lbl"><span class="zh">Dcard 銷售論述</span><span class="en">Dcard sales kit</span></div></a>
+    <a class="stat" href="#campaign"><div class="num"><span class="zh"><span data-count="1400">0</span><span class="u"> 萬+</span></span><span class="en">NT$14M+</span></div><div class="lbl"><span class="zh">通案總營收 (NT$)</span><span class="en">Campaign revenue</span></div></a>
+    <a class="stat" href="#campaign"><div class="num"><span class="u">+</span><span data-count="66.4" data-dec="1">0</span><span class="u">%</span></div><div class="lbl"><span class="zh">營收 YoY 成長</span><span class="en">Revenue YoY growth</span></div></a>
+    <a class="stat" href="#proposal"><div class="num"><span data-count="4">0</span><span class="u">+</span></div><div class="lbl"><span class="zh">指標集團提案</span><span class="en">Flagship group proposals</span></div></a>
+    <a class="stat" href="#collab"><div class="num"><span data-count="100">0</span><span class="u">+</span></div><div class="lbl"><span class="zh">合作品牌</span><span class="en">Brands partnered</span></div></a>
+  </div>
+</div>
+</header>
+
+<!-- ===== 1. ABOUT ===== -->
+<section class="section" id="about"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">01</div><h2><span class="zh">簡介</span><span class="en">About Me</span></h2></div>
+  <p class="sec-sub"><span class="zh">成熟穩重、自我要求高，溝通能力出色，凡事<b>以解決問題為導向</b>。</span><span class="en">Composed and driven, with sharp communication skills and a <b>problem-solver's instinct</b> in everything I take on.</span></p>
+  <div class="grid2">
+    <div>
+      <div class="quote">
+        <img src="images/dcard-logo.png" alt="Dcard" style="height:26px;width:auto;margin-bottom:14px;position:relative;display:block">
+        <div class="label"><span class="zh">職場評價 · Peer & Manager Review</span><span class="en">Peer & Manager Review</span></div>
+        <p>
+          <span class="zh">Vivien 是一位成熟穩重且高度負責的工作者，面對挑戰不落入情緒，始終以「<b>解決問題</b>」為導向。具備「<b>快速行動</b>」與「<b>持續突破</b>」的精神，自我要求高，總能高效拆解任務並追求比上次更好的表現。同時心思細膩、善於換位思考，擁有出色的跨部門溝通能力，能消化各方需求並創造雙贏，是讓業務與執行團隊都感到極度安心可靠的優秀夥伴。</span>
+          <span class="en">Vivien is a composed, highly accountable professional. She stays level-headed under pressure and keeps the focus on <b>solving the problem</b>. She <b>moves fast</b>, raises her own bar every time, and breaks work down and executes it efficiently. Thoughtful and quick to see other perspectives, she has the cross-functional communication skills to balance competing needs and land genuine win-wins — a partner both sales and delivery teams can rely on completely.</span>
+        </p>
+        <div class="src"><span class="zh">資料來源：Dcard 歷年考核報告</span><span class="en">Source: Dcard annual performance reviews</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact">
+        <span class="chip">📧 <a href="mailto:vivienen0610@gmail.com">vivienen0610@gmail.com</a></span>
+        <span class="chip">📱 0978-213-507</span>
+        <span class="chip">🔗 <a href="https://www.linkedin.com/in/%E8%8A%B8%E7%91%84-%E8%A8%B1-2256b4182/" target="_blank" rel="noopener">LinkedIn</a></span>
+        <!-- TODO：履歷連結之後補。可把檔案命名 Vivien-Hsu-CV.pdf 放進專案根目錄即生效，或改 href 為雲端連結 -->
+        <a class="chip chip-cv" href="Vivien-Hsu-CV.pdf" target="_blank" rel="noopener">📄 <span class="zh">下載履歷</span><span class="en">Download CV</span></a>
+      </div>
+      <div class="quote" style="margin-top:18px;border-left-color:var(--blue)">
+        <div class="label" style="color:var(--gray)"><span class="zh">核心能力</span><span class="en">Core Strengths</span></div>
+        <div class="pillars" style="margin-top:12px">
+          <a class="pillar" href="#proposal"><span class="zh">數據分析</span><span class="en">Data Analytics</span></a>
+          <a class="pillar" href="#ai"><span class="zh">AI 應用</span><span class="en">AI Applications</span></a>
+          <a class="pillar" href="#strategy"><span class="zh">商業策略</span><span class="en">Business Strategy</span></a>
+          <a class="pillar" href="#collab"><span class="zh">專案管理</span><span class="en">Project Management</span></a>
+          <a class="pillar" href="#campaign"><span class="zh">產品開發</span><span class="en">Product Development</span></a>
+          <a class="pillar" href="#proposal"><span class="zh">整合行銷</span><span class="en">Integrated Marketing</span></a>
+          <span class="pillar"><span class="zh">團隊管理</span><span class="en">Team Leadership</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="testi">
+    <summary>💬 <span class="zh">合作夥伴推薦原話</span><span class="en">Partner testimonials</span><span class="meta"><span class="txt"><span class="zh">6 則</span><span class="en">6 quotes</span></span><span class="ar">＋</span></span></summary>
+    <div class="testi-grid">
+      <blockquote>
+        <p><span class="zh">能力沒有問題，也能在面對問題時<b>主動給出想法</b>。覺得特別好的一點是，不會讓業務覺得是在「執行」，而是<b>一起創造案例</b>。</span><span class="en">Her skills are solid, and she <b>proactively brings ideas</b> when problems arise. What stands out most: she never makes sales feel like they're just "executing" — it feels like <b>creating wins together</b>.</span></p>
+        <div class="who"><span class="zh">Sales Manager</span><span class="en">Sales Manager</span></div>
+      </blockquote>
+      <blockquote>
+        <p><span class="zh"><b>做別人不敢做的事</b>，挑戰別人不敢挑戰的挑戰；即便失敗了也不必灰心，成功了卻可以得到更大的喝彩——這就是<b>不能害怕做更大的夢</b>的真諦。</span><span class="en">She <b>does what others don't dare to</b> and takes on the challenges others avoid. Fail and there's no need to be discouraged; succeed and the applause is all the greater — that's what it means to <b>not be afraid to dream bigger</b>.</span></p>
+        <div class="who"><span class="zh">Sales Lead</span><span class="en">Sales Lead</span></div>
+      </blockquote>
+      <blockquote>
+        <p><span class="zh"><b>溝通能力</b>真的很棒，經常可以<b>讓兩邊做事有效率</b>，不會有延誤上片，或是腳本大修改的問題。</span><span class="en">Her <b>communication is genuinely great</b> — she <b>keeps both sides moving efficiently</b>, with no delayed uploads or major script rewrites.</span></p>
+        <div class="who"><span class="zh">Dcard Video · 短影音企劃</span><span class="en">Dcard Video · Short-Video Planner</span></div>
+      </blockquote>
+      <blockquote>
+        <p><span class="zh">在合作的過程中，對專案的問題和討論都能<b>有效點出關鍵問題並快速解決</b>，覺得 Vivien 是一個<b>執行力跟責任感都很高</b>的優秀夥伴！</span><span class="en">Throughout our collaboration she could <b>pinpoint the key issue and resolve it fast</b>. Vivien is an outstanding partner — <b>high execution and a strong sense of ownership</b>!</span></p>
+        <div class="who"><span class="zh">Brand Designer</span><span class="en">Brand Designer</span></div>
+      </blockquote>
+      <blockquote>
+        <p><span class="zh">Vivien 是一個<b>很可靠</b>的夥伴，一起工作只要看到是他就會很安心！<b>對工作很負責</b>，也會貼心地考慮到很多面向，讓大家工作起來很舒服愉快；遇到需要討論的問題，也會<b>先提供幾個方案</b>讓大家討論，省下很多來回溝通的時間。</span><span class="en">Vivien is a <b>reliable</b> partner — just seeing she's on it puts everyone at ease. She's <b>responsible</b> and thoughtfully considers many angles, making work smooth and enjoyable. When something needs discussion, she <b>offers a few options up front</b>, saving a lot of back-and-forth.</span></p>
+        <div class="who"><span class="zh">Dcard Video · 經紀人</span><span class="en">Dcard Video · Talent Manager</span></div>
+      </blockquote>
+      <blockquote>
+        <p><span class="zh">Vivien 的<b>簡報製作能力</b>讓人印象深刻，具有豐富的<b>畫面說服力</b>；面對跨部門的主管階級夥伴，也能<b>清楚傳遞需求</b>，為對方建構出良好的合作想像空間。作為資深企劃，對各專案細節、公司背景都很有<b>掌握度</b>，詢問問題時總能快速獲得友善解答！</span><span class="en">Vivien's <b>deck-making is impressive</b> — visually persuasive. With cross-department managers she <b>conveys needs clearly</b> and paints a compelling picture of the collaboration. As a senior planner she has <b>great command</b> of project details and company background, and always gives quick, friendly answers!</span></p>
+        <div class="who"><span class="zh">Campaign Planner</span><span class="en">Campaign Planner</span></div>
+      </blockquote>
+    </div>
+  </details>
+</div></section>
+
+<!-- ===== 2. AI ===== -->
+<section class="section alt" id="ai"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">02</div><h2><span class="zh">AI 工具創新應用</span><span class="en">AI Tooling Innovation</span></h2></div>
+  <p class="sec-sub">
+    <span class="zh">建立 <b>5 隻 AI Agent</b> 優化提案、市場研究與數據分析流程，提升團隊專案交付效率與品質。<br>一條完整的<b>「話題提案」工作流</b>，為團隊在「打造話題」的過程中每一段缺口佈局。</span>
+    <span class="en">I built <b>5 AI Agents</b> to sharpen our proposal, market-research, and data-analysis workflow — raising both the speed and quality of what the team ships.<br>Together they form <b>one complete "topic proposal" pipeline</b> that covers every gap in turning an idea into buzz.</span>
+  </p>
+
+  <div class="guardrails">
+    <span class="gr-lbl">🛡 <span class="zh">工程護欄</span><span class="en">Engineering guardrails</span></span>
+    <span class="gr-tag"><span class="zh">數據可溯源・反幻覺</span><span class="en">Traceable data · no hallucination</span></span>
+    <span class="gr-tag"><span class="zh">確定性運算優先</span><span class="en">Deterministic compute first</span></span>
+    <span class="gr-tag"><span class="zh">多源工具編排</span><span class="en">Multi-source orchestration</span></span>
+    <span class="gr-tag"><span class="zh">業配內容過濾</span><span class="en">Sponsored-content filtering</span></span>
+    <span class="gr-tag"><span class="zh">對外數據模糊化</span><span class="en">External-data blurring</span></span>
+    <span class="gr-tag"><span class="zh">品牌視覺強制套用</span><span class="en">Enforced brand visuals</span></span>
+  </div>
+
+  <!-- agent map -->
+  <h4 style="color:var(--blue-dark);margin-bottom:12px"><span class="zh">🗺️ 5-Agent 能力地圖</span><span class="en">🗺️ 5-Agent Capability Map</span></h4>
+  <div class="map-card">
+    <table class="map" id="agentMap">
+      <thead><tr>
+        <th><span class="zh">流程 / Agent</span><span class="en">Stage / Agent</span></th>
+        <th class="ag" data-col="0">A1<br><small><span class="zh">熱門討論</span><span class="en">Hot Topics</span></small></th>
+        <th class="ag" data-col="1">A2<br><small><span class="zh">受眾洞察</span><span class="en">Audience</span></small></th>
+        <th class="ag" data-col="2">A3<br><small><span class="zh">趨勢預測</span><span class="en">Trend</span></small></th>
+        <th class="ag" data-col="3">A4<br><small><span class="zh">案例分析</span><span class="en">Case Study</span></small></th>
+        <th class="ag" data-col="4">A5<br><small><span class="zh">合作建議</span><span class="en">Pitch Match</span></small></th>
+      </tr></thead>
+      <tbody>
+        <tr><th><span class="zh">1. 趨勢/輿情掌握</span><span class="en">1. Trend & buzz</span></th><td class="y" data-c="0">✓</td><td class="y" data-c="1">✓</td><td class="y" data-c="2">✓</td><td data-c="3">·</td><td class="y" data-c="4">✓</td></tr>
+        <tr><th><span class="zh">2. 數據分析&洞察</span><span class="en">2. Data & insight</span></th><td data-c="0">·</td><td class="y" data-c="1">✓</td><td class="y" data-c="2">✓</td><td class="y" data-c="3">✓</td><td class="y" data-c="4">✓</td></tr>
+        <tr><th><span class="zh">3. 創意/策略發想</span><span class="en">3. Creative & strategy</span></th><td data-c="0">·</td><td class="y" data-c="1">✓</td><td class="y" data-c="2">✓</td><td data-c="3">·</td><td class="y" data-c="4">✓</td></tr>
+        <tr><th><span class="zh">4. 成功邏輯驗證</span><span class="en">4. Success validation</span></th><td data-c="0">·</td><td data-c="1">·</td><td data-c="2">·</td><td class="y" data-c="3">✓</td><td class="y" data-c="4">✓</td></tr>
+        <tr><th><span class="zh">5. 整合建議</span><span class="en">5. Integrated advice</span></th><td class="y" data-c="0">✓</td><td class="y" data-c="1">✓</td><td class="y" data-c="2">✓</td><td class="y" data-c="3">✓</td><td class="y" data-c="4">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- methodology -->
+  <h4 style="color:var(--blue-dark);margin-bottom:4px"><span class="zh">🧭 建置方法論</span><span class="en">🧭 Build Methodology</span></h4>
+  <div class="method">
+    <div class="mcard">
+      <h4><span class="n">1</span><span><span class="zh">我怎麼決定「什麼任務值得做成 Agent」</span><span class="en">How I decide which tasks become Agents</span></span></h4>
+      <ul class="mlist">
+        <li><b><span class="zh">高頻 × 高耗時且規則可描述</span><span class="en">High-frequency, time-consuming, with rules you can describe</span></b><br><span class="zh">ex：每次提案都需查詢多張數據表並總結為洞察</span><span class="en">e.g. every proposal means querying several data tables and distilling them into insight</span></li>
+        <li><b><span class="zh">AI 產出需被驗證</span><span class="en">AI output that needs checking</span></b><br><span class="zh">ex：團隊高頻用於提案數據鋪陳，但資料敏感度因人而異，可能給出錯誤資訊</span><span class="en">e.g. heavily used for proposal data, but sensitivity varies by person and wrong answers can slip through</span></li>
+        <li><b><span class="zh">個人經驗難以與團隊共享</span><span class="en">Expertise that's hard to share</span></b><br><span class="zh">ex：資深企劃的提案經驗難高效複用全團隊；跨部門資訊落差需工具快速拉齊共識</span><span class="en">e.g. senior planners' instincts don't scale across the team, and cross-team gaps need a tool to align fast</span></li>
+      </ul>
+    </div>
+    <div class="mcard">
+      <h4><span class="n">2</span><span><span class="zh">我怎麼規劃「嚴謹的 Agent 共通原則」</span><span class="en">How I set rigorous, shared Agent principles</span></span></h4>
+      <ul class="mlist">
+        <li><b><span class="zh">數據可溯源、反幻覺</span><span class="en">Traceable data, no hallucination</span></b><br><span class="zh">每個數字與聲明都須對應到某次工具實際回傳，否則標「數據缺失」，嚴禁 LLM 自行推算</span><span class="en">every number and claim must map to a real tool return — otherwise it's flagged "data missing," and the LLM never guesses</span></li>
+        <li><b><span class="zh">確定性運算優先於 LLM</span><span class="en">Deterministic compute over the LLM</span></b><br><span class="zh">分類、過濾、日期計算改用 Python／regex（可重現），降低隨機性</span><span class="en">classification, filtering, and date math run in Python/regex (reproducible), cutting randomness</span></li>
+        <li><b><span class="zh">多源工具編排</span><span class="en">Multi-source orchestration</span></b><br><span class="zh">串接 Redash、Superset BigQuery、Dcard API、Google Drive、Slack，並以平行查詢縮短等待</span><span class="en">wires up Redash, Superset BigQuery, Dcard API, Google Drive, and Slack, with parallel queries to cut the wait</span></li>
+        <li><b><span class="zh">品質與安全護欄</span><span class="en">Quality & safety guardrails</span></b><br><span class="zh">業配/成人內容程式化過濾、對外數據模糊化、強制套用品牌視覺，確保產出可直接對外</span><span class="en">programmatic filtering of sponsored/adult content, blurred external data, enforced brand visuals — so output is client-ready</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- A1-A5 accordion -->
+  <h4 style="color:var(--blue-dark);margin-bottom:12px"><span class="zh">🤖 5 隻 Agent 詳解（點擊展開）</span><span class="en">🤖 The 5 Agents (click to expand)</span></h4>
+  <div id="agentCards"></div>
+</div></section>
+
+<!-- ===== 3. STRATEGY ===== -->
+<section class="section" id="strategy"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">03</div><h2><span class="zh">銷售策略領導與規劃</span><span class="en">Sales Strategy & Leadership</span></h2></div>
+  <p class="sec-sub"><span class="zh">不只「做出一份文件」，更展現我能定義方向、統籌資源、把數據轉成商業說服力的<b>領導與規劃能力</b>。</span><span class="en">Not just "producing a document" — proof that I can <b>set direction, line up resources, and turn data into commercial persuasion</b>.</span></p>
+  <div class="grid2">
+    <div class="scard">
+      <button type="button" class="scard-cover zoom" data-full="images/saleskit/cover.png" aria-label="放大 Sales Kit 封面"><img src="images/saleskit/cover.png" alt="2026 Dcard KA Sales Kit 封面" loading="lazy"></button>
+      <div class="badge">SALES KIT</div>
+      <h3><span class="zh">2026 Dcard KA Sales Kit</span><span class="en">2026 Dcard KA Sales Kit</span></h3>
+      <div class="outcome"><span class="zh">把「Dcard 為何值得投資」變成可複製的標準素材</span><span class="en">Turned "why invest in Dcard" into reusable, standardized sales material</span></div>
+      <div class="intent"><span class="zh"><b>戰略意圖：</b>為廣告部門建立一套對 KA（關鍵客戶）一致、有說服力的年度銷售論述。</span><span class="en"><b>Strategic intent:</b> give the ad team one consistent, persuasive annual sales story for key accounts.</span></div>
+      <h6><span class="zh">我的角色</span><span class="en">My Role</span></h6>
+      <ul>
+        <li><span class="zh">從整體架構設計到完稿，<b>主導破百頁 Sales Kit 產出</b></span><span class="en"><b>Led the 100+ page Sales Kit</b> end to end, from structure to final draft</span></li>
+        <li><span class="zh">與主管團隊<b>共同制定年度銷售策略主軸</b></span><span class="en">Co-set the annual sales strategy with the leadership team</span></li>
+        <li><span class="zh">統籌跨團隊內容產出，整合成<b>單一連貫敘事</b></span><span class="en">Pulled cross-team content into a single, coherent narrative</span></li>
+        <li><span class="zh">產出<b>中英雙語版本</b>，支援國際／跨國客戶溝通</span><span class="en">Produced <b>bilingual (CN/EN) versions</b> for international clients</span></li>
+      </ul>
+      <h6><span class="zh">我設計的論述架構</span><span class="en">Narrative Architecture I Designed</span></h6>
+            <div class="arch-grid">
+        <div class="arch-card"><div class="ac-h"><span class="ac-ic">🎯</span><span class="zh">媒體定位</span><span class="en">Media Positioning</span></div><p><span class="zh">Dcard 位居 <b>Threads × Google × AI</b> 三大數位旅程匯流點</span><span class="en">Dcard at the convergence of three digital journeys — <b>Threads × Google × AI</b></span></p></div>
+        <div class="arch-card"><div class="ac-h"><span class="ac-ic">🌉</span><span class="zh">2026 核心策略</span><span class="en">2026 Core Strategy</span></div><p><span class="zh">校園銜接職場的橋樑，針對「<b>職業人群</b>」發展全新溝通</span><span class="en">The bridge from campus to career — built for <b>working professionals</b></span></p></div>
+        <div class="arch-card"><div class="ac-h"><span class="ac-ic">🔄</span><span class="zh">廣告生態圈</span><span class="en">Ad Ecosystem</span></div><p><span class="zh">人群 × 場域 × 話題 → 聲量 → 行動 → <b>商業價值</b></span><span class="en">Audience × Space × Topic → buzz → action → <b>commercial value</b></span></p></div>
+        <div class="arch-card"><div class="ac-h"><span class="ac-ic">📦</span><span class="zh">廣告專案一覽</span><span class="en">Ad Catalog</span></div><p><span class="zh">口碑・影音・活動・版位・加值・產業 6 大服務，<b>30+ 產品</b>與 KPI</span><span class="en">6 service lines · <b>30+ products</b>, each with KPIs</span></p></div>
+      </div>
+      <div class="filelinks">
+        <a class="btn btn-ghost" href="https://drive.google.com/file/d/1WeCpS-jesYJ8PI3XG6JwfinGCMjztbDE/view?usp=sharing" target="_blank">📄 <span class="zh">中文版</span><span class="en">Chinese ver.</span></a>
+        <a class="btn btn-ghost" href="https://drive.google.com/file/d/1DMLSrauNgP9oK7EiapW-RcOaXNV66mCu/view?usp=sharing" target="_blank">📄 <span class="zh">英文版</span><span class="en">English ver.</span></a>
+      </div>
+      <div id="salesKitGal" class="pgal"></div>
+    </div>
+    <div class="scard">
+      <button type="button" class="scard-cover zoom" data-full="images/consumer/cover.png" aria-label="放大消費潛力報告封面"><img src="images/consumer/cover.png" alt="2026 Dcard 消費者潛力報告 封面" loading="lazy"></button>
+      <div class="badge" style="background:var(--blue)">RESEARCH</div>
+      <h3><span class="zh">2026 Dcard 消費者潛力報告</span><span class="en">2026 Dcard Consumer Potential Report</span></h3>
+      <div class="outcome"><span class="zh">主導與國際調研公司合作，證明用戶消費潛力</span><span class="en">Led a study with a global research firm to prove users' spending power</span></div>
+      <div class="intent"><span class="zh"><b>戰略意圖：</b>以第三方調研數據，建立「Dcard 使用者具備消費潛力、值得品牌投資」的客觀論述，作為銷售與品牌溝通的權威背書。</span><span class="en"><b>Strategic intent:</b> use third-party research to make the objective case that Dcard users have real spending power and are worth investing in — an authoritative endorsement for sales and brand conversations.</span></div>
+      <h6><span class="zh">我的角色</span><span class="en">My Role</span></h6>
+      <ul>
+        <li><span class="zh">發起並<b>主導與國際調研公司 KANTAR 合作</b>的消費習性分析專案</span><span class="en">Initiated and <b>led a consumer-behavior study with KANTAR</b>, a global research firm</span></li>
+        <li><span class="zh"><b>定義研究命題與調查方向</b>（要證明什麼、問什麼）</span><span class="en"><b>Defined the research questions and survey direction</b> — what to prove, what to ask</span></li>
+        <li><span class="zh">進行數據分析，<b>將調查結果轉化為對品牌的投資價值論述</b></span><span class="en">Analyzed the data and <b>turned the findings into an investment case for brands</b></span></li>
+      </ul>
+      <div class="pillars" style="margin-top:18px">
+        <span class="pillar">KANTAR</span>
+        <span class="pillar"><span class="zh">第三方背書</span><span class="en">3rd-party endorsement</span></span>
+        <span class="pillar"><span class="zh">消費潛力</span><span class="en">Spending potential</span></span>
+      </div>
+      <div class="filelinks">
+        <a class="btn btn-ghost" href="https://drive.google.com/file/d/1RWxdJiBHRGNsa--emswzQpTpEavxhl_M/view?usp=sharing" target="_blank">📊 <span class="zh">查看報告</span><span class="en">View report</span></a>
+      </div>
+      <div id="consumerGal" class="pgal"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== 4. CAMPAIGN ===== -->
+<section class="section alt" id="campaign"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">04</div><h2><span class="zh">大型年度通案策劃 & 統籌執行</span><span class="en">Large-Scale Annual Campaigns</span></h2></div>
+  <p class="sec-sub"><span class="zh">於「母檔、週年慶、雙 11」促銷節點規劃並執行<b>三檔跨品牌通案</b>，精準溝通具明確購買意圖之受眾。</span><span class="en">Planned and ran <b>three cross-brand campaigns</b> at the big sales moments — anchor sale, anniversary, and Double 11 — reaching audiences with clear intent to buy.</span></p>
+  <div class="camp-hero">
+    <div>
+      <div class="big"><span class="zh">1,400<span class="u"> 萬+</span></span><span class="en">NT$14M+</span></div>
+      <div class="desc"><span class="zh">3 檔通案總營收突破 1,400 萬（NT$14M+），精準溝通高購買意圖受眾。</span><span class="en">Three campaigns generated NT$14M+ in total revenue, all aimed at high-intent audiences.</span></div>
+    </div>
+    <div class="yoy"><div class="v">+66.4%</div><div class="k"><span class="zh">YoY 營收成長</span><span class="en">YoY revenue growth</span></div></div>
+  </div>
+  <div class="camp-grid">
+    <div class="ccard">
+      <button class="ccard-img zoom" data-full="images/campaign/dland-kv.png" aria-label="放大主視覺"><img src="images/campaign/dland-kv.png" alt="卡友 D 樂園 宣傳主視覺" loading="lazy"></button>
+      <div class="ccard-pad">
+        <h4>💄 <span class="zh">卡友 D 樂園</span><span class="en">Cardholder D-Land</span></h4>
+        <div class="outcome"><span class="zh">全站徵文使品牌訊息自然落地</span><span class="en">A site-wide writing campaign that landed brand messages naturally</span></div>
+        <div class="cc-meta">🗓 <span class="zh">上線時程：2024/4–2024/5</span><span class="en">Live · Apr–May 2024</span></div>
+        <p class="cc-desc"><span class="zh">以「Dcard 春季限定遊樂園」為主題，邀請用戶在母檔期間來到 Dcard 一起互動、同樂，透過將不同廣告專案包裝為遊樂園中各種設施之方式，使用戶自然接觸到品牌資訊。</span><span class="en">Themed as a "Dcard Spring Amusement Park," it invited users to play along during the anchor-sale period — dressing each ad format up as a park attraction so brand messages landed naturally.</span></p>
+        <div class="cc-res"><span class="cc-res-lbl"><span class="zh">搭配資源</span><span class="en">Resources</span></span><span class="zh">主題徵文、互動遊戲、站內信、品牌大使、開箱短影音⋯等，以「<b>口碑專案</b>」為主。</span><span class="en">Themed writing campaign, interactive games, in-app messages, brand ambassadors, unboxing shorts — built mainly on <b>word-of-mouth</b>.</span></div>
+        <div class="metrics">
+          <div class="metric"><div class="v"><span class="zh">1,248萬+</span><span class="en">12.48M+</span></div><div class="k"><span class="zh">總曝光</span><span class="en">Impressions</span></div></div>
+          <div class="metric"><div class="v"><span class="zh">12萬+</span><span class="en">120k+</span></div><div class="k"><span class="zh">總互動</span><span class="en">Interactions</span></div></div>
+        </div>
+        <a class="extlink" href="https://www.dcard.tw/f/makeup/p/255004978" target="_blank"><span class="zh">活動主文</span><span class="en">Campaign post</span></a>
+      </div>
+    </div>
+    <div class="ccard">
+      <button class="ccard-img zoom" data-full="images/campaign/dselection-kv.jpg" aria-label="放大主視覺"><img src="images/campaign/dselection-kv.jpg" alt="卡友 D 選品 主視覺" loading="lazy"></button>
+      <div class="ccard-pad">
+        <h4>🛍️ <span class="zh">卡友 D 選品</span><span class="en">Cardholder D-Selection</span></h4>
+        <div class="outcome"><span class="zh">虛擬「官方選品店」帶動高度曝光</span><span class="en">A virtual "official curated store" that drove massive exposure</span></div>
+        <div class="cc-meta">🗓 <span class="zh">上線時程：2024/9–2024/10</span><span class="en">Live · Sep–Oct 2024</span></div>
+        <p class="cc-desc"><span class="zh">以「讓 Dcard 帶你逛街」為溝通主軸，打造虛擬「Dcard 官方選品店」，使用戶可獲得豐富優惠資訊，完成自己的週年慶攻略圖鑑。</span><span class="en">Built around "Let Dcard take you shopping," it opened a virtual "Dcard Official Curated Store" where users gathered deals and built their own anniversary-sale game plan.</span></p>
+        <div class="cc-res"><span class="cc-res-lbl"><span class="zh">搭配資源</span><span class="en">Resources</span></span><span class="zh">話題標籤、互動式彩蛋、開屏廣告⋯等，以「<b>廣告曝光</b>」為主。</span><span class="en">Topic hashtags, interactive easter eggs, splash ads — built mainly on <b>ad exposure</b>.</span></div>
+        <div class="metrics">
+          <div class="metric"><div class="v"><span class="zh">2,400萬+</span><span class="en">24M+</span></div><div class="k"><span class="zh">總曝光</span><span class="en">Impressions</span></div></div>
+          <div class="metric"><div class="v"><span class="zh">7.5萬+</span><span class="en">75k+</span></div><div class="k"><span class="zh">總互動</span><span class="en">Interactions</span></div></div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a class="extlink" href="https://www.dcard.tw/f/makeup/p/256605613" target="_blank"><span class="zh">活動主文</span><span class="en">Post</span></a>
+          <a class="extlink" href="https://www.dcard.tw/@d_selection" target="_blank"><span class="zh">活動帳號</span><span class="en">Account</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <button class="ccard-img zoom" data-full="images/campaign/thanksgiving-kv.png" aria-label="放大主視覺"><img src="images/campaign/thanksgiving-kv.png" alt="Dcard 感謝祭 文章主視覺" loading="lazy"></button>
+      <div class="ccard-pad">
+        <h4>🎁 <span class="zh">Dcard 感謝祭</span><span class="en">Dcard Thanksgiving Fest</span></h4>
+        <div class="outcome"><span class="zh">討論×曝光×互動×轉換一次到位</span><span class="en">Discussion × exposure × interaction × conversion, all at once</span></div>
+        <div class="cc-meta">🗓 <span class="zh">上線時程：2024/9–2024/11</span><span class="en">Live · Sep–Nov 2024</span></div>
+        <p class="cc-desc"><span class="zh">延續去年概念，重新舉辦「感謝祭」活動，以感謝用戶這一年來對 Dcard x 品牌合作的關注；並透過多種互動帶起原生討論，讓真實口碑互相推坑，協助用戶輕鬆找到最適合自己的好物。</span><span class="en">A return of the "Thanksgiving Fest," thanking users for a year of engaging with Dcard × brand collaborations. A mix of interactions sparked organic discussion and real word-of-mouth, helping people find the products that fit them.</span></p>
+        <div class="cc-res"><span class="cc-res-lbl"><span class="zh">搭配資源</span><span class="en">Resources</span></span><span class="zh">品牌帳號、看板包版廣告、小卡版位互動、活動轉運站⋯等，使「<b>討論、曝光、互動、轉換</b>」兼具。</span><span class="en">Brand accounts, board takeover ads, card-slot interactions, a campaign hub — covering <b>discussion, exposure, interaction & conversion</b> all at once.</span></div>
+        <div class="metrics">
+          <div class="metric"><div class="v"><span class="zh">9.8萬+</span><span class="en">98k+</span></div><div class="k"><span class="zh">兩波總互動</span><span class="en">Interactions (2 waves)</span></div></div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a class="extlink" href="https://www.dcard.tw/f/makeup/p/259806007" target="_blank"><span class="zh">第一波</span><span class="en">Wave 1</span></a>
+          <a class="extlink" href="https://www.dcard.tw/f/makeup/p/260025574" target="_blank"><span class="zh">第二波</span><span class="en">Wave 2</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== 工作方法 band（打破節奏）===== -->
+<section class="howband"><div class="wrap reveal">
+  <div class="hb-head"><span class="zh">我的工作方法</span><span class="en">How I Work</span></div>
+  <div class="hb-grid">
+    <div class="hb-item"><div class="hb-ic">🎯</div><h5><span class="zh">數據先行</span><span class="en">Data-first</span></h5><p><span class="zh">把洞察轉成可執行、也讓客戶買單的決策。</span><span class="en">Turning insight into decisions that ship — and that clients buy into.</span></p></div>
+    <div class="hb-item"><div class="hb-ic">🔄</div><h5><span class="zh">系統化思考</span><span class="en">Systems thinking</span></h5><p><span class="zh">把一次性的工作做成可複用的流程與工具，讓團隊一起變快。</span><span class="en">Turning one-off work into reusable workflows and tools that make the whole team faster.</span></p></div>
+    <div class="hb-item"><div class="hb-ic">🤝</div><h5><span class="zh">跨部門統籌</span><span class="en">Cross-functional orchestration</span></h5><p><span class="zh">整合資源、推動專案落地，把策略真正做成成果。</span><span class="en">Lining up resources and driving projects through — turning strategy into results.</span></p></div>
+  </div>
+</div></section>
+
+<!-- ===== 5. PROPOSALS ===== -->
+<section class="section" id="proposal"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">05</div><h2><span class="zh">指標品牌 / 集團提案</span><span class="en">Flagship Brand & Group Proposals</span></h2></div>
+  <p class="sec-sub"><span class="zh">提案涉及客戶機密，以下僅呈現<b>策略思路與我的角色</b>，具體內容恕不公開。</span><span class="en">These proposals are under client confidentiality, so only the <b>strategic thinking and my role</b> are shown — specifics stay private.</span></p>
+  <div class="tl" id="timeline"></div>
+</div></section>
+
+<!-- ===== 6. COLLAB ===== -->
+<section class="section alt" id="collab"><div class="wrap reveal">
+  <div class="sec-head"><div class="sec-no">06</div><h2><span class="zh">品牌合作成果</span><span class="en">Brand Collaborations</span></h2></div>
+  <p class="sec-sub"><span class="zh">擁有為 <b>100+ 品牌</b>提執案經驗，能主導專案推進，透過口碑、影音、實體活動等方式打造有力宣傳。</span><span class="en">I've pitched and delivered for <b>100+ brands</b>, driving projects forward and building campaigns with real pull through word-of-mouth, video, and live events.</span></p>
+  <div class="tabs" id="collabTabs">
+    <button class="tab on" data-f="all"><span class="zh">全部</span><span class="en">All</span></button>
+    <button class="tab" data-f="wom"><span class="zh">口碑</span><span class="en">Word-of-mouth</span></button>
+    <button class="tab" data-f="video"><span class="zh">影音</span><span class="en">Video</span></button>
+    <button class="tab" data-f="event"><span class="zh">實體活動</span><span class="en">Live Event</span></button>
+  </div>
+  <div class="collab-eyebrow">✦ <span class="zh">精選案例</span><span class="en">Featured Cases</span></div>
+  <div class="collab-grid" id="collabGrid"></div>
+</div></section>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" class="lb" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="關閉">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一張">‹</button>
+  <img id="lbimg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="下一張">›</button>
+  <div class="lb-count" id="lbCount"></div>
+  <div class="lb-hint"><span class="zh">← → 換頁 · 點擊背景關閉</span><span class="en">← → to flip · click background to close</span></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer><div class="wrap">
+  <div class="ft-name">許芸瑄 Vivien Hsu</div>
+  <p style="opacity:.8;margin:8px 0 0"><span class="zh">廣告策略 · 商業開發 · AI 應用</span><span class="en">Ad Strategy · Business Development · AI</span></p>
+  <div class="ft-c">
+    <a href="mailto:vivienen0610@gmail.com">📧 vivienen0610@gmail.com</a>
+    <a href="tel:0978213507">📱 0978-213-507</a>
+    <a href="https://www.linkedin.com/in/%E8%8A%B8%E7%91%84-%E8%A8%B1-2256b4182/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    <a class="ft-cv" href="Vivien-Hsu-CV.pdf" target="_blank" rel="noopener">📄 <span class="zh">下載履歷</span><span class="en">Download CV</span></a>
+  </div>
+  <p class="tip"><span class="zh">© 2026 Vivien Hsu · 本作品集部分內容涉及客戶機密，僅呈現策略思路</span><span class="en">© 2026 Vivien Hsu · Some content is under client confidentiality; only the strategy is shown</span></p>
+</div></footer>
+
+<script>
+/* helper */
+const T=(zh,en)=>`<span class="zh">${zh}</span><span class="en">${en}</span>`;
+
+/* ===== DATA: A1–A5 Agents ===== */
+const AGENTS=[
+ {code:"A1",type_zh:"時事型",type_en:"Topical",title_zh:"熱門討論報告",title_en:"Hot Discussion Report",
+  use_zh:"借勢指定區間內的 Dcard 熱門話題，為品牌規劃符合時下趨勢的溝通內容。",
+  use_en:"Taps trending Dcard topics over any time window to plan on-trend brand communication.",
+  hi_zh:["<b>四路平行查詢編排</b>","<b>業配文剔除邏輯</b>"],
+  hi_en:["<b>Four-way parallel query orchestration</b>","<b>Sponsored-post exclusion logic</b>"],
+  iter_zh:"發現業配文會污染洞察結果 → 加入「任一內容含分潤連結即整篇剔除並補位」的機制。",
+  iter_en:"Sponsored posts were polluting the insights → added a rule: any post with an affiliate link is dropped entirely and back-filled.",
+  out_zh:"四大核心分析報告 — 前 10 篇熱議文章、前 10 大熱議話題、前 10 大高流量看板、前 10 大全站竄升關鍵字。",
+  out_en:"Four core reports — top 10 hot posts, top 10 topics, top 10 high-traffic boards, and top 10 site-wide rising keywords.",
+  before_zh:"跨多個後台手動撈數據、人工整理四大維度，每次查詢需花費<b>數小時</b>，分析口徑因人而異。",
+  before_en:"Pulling data by hand across back-ends and compiling four dimensions took <b>several hours</b> per query — and the method shifted from person to person.",
+  after_zh:"一句話指定區間即自動編排查詢，約 <b>5–7 分鐘</b>產出結構化報告。",
+  after_en:"Name a time window in one sentence and it orchestrates the queries itself — a structured report in <b>~5–7 min</b>.",
+  impact:{save_zh:"⏱ 省時 90%+",save_en:"⏱ 90%+ time saved",bar:6,bt_zh:"數小時",bt_en:"hours",at_zh:"5–7 分",at_en:"5–7 min",cut_zh:"省 90%+",cut_en:"90%+ saved"},demo:"https://dcard-trending-30d-dcard.vibehost.space/",preview:"images/demo-trending.png"},
+ {code:"A2",type_zh:"數據型",type_en:"Data-driven",title_zh:"品牌受眾洞察",title_en:"Brand Audience Insight",
+  use_zh:"串接 Dcard 數據資料庫，分析指定品牌、受眾輪廓與興趣行為，為品牌提案提供數據佐證。",
+  use_en:"Connects to the Dcard database to profile a brand, its audience, and interest behavior — the data backing for a proposal.",
+  hi_zh:["<b>跨看板捕捉策略</b>：找品牌在「非預期看板」的討論，挖出隱性需求場景","<b>反幻覺溯源機制</b>"],
+  hi_en:["<b>Cross-board capture</b>: finds brand discussion on unexpected boards to surface hidden need scenarios","<b>Anti-hallucination sourcing</b>"],
+  iter_zh:"發現 AI 偶爾會「編造」查無來源的數字 → 加入「每個聲明都須能溯源到某次工具回傳，否則標數據缺失」的硬規則，可信度大幅提升。",
+  iter_en:"The AI occasionally invented numbers with no source → added a hard rule: every claim must trace back to a tool return, or it's flagged 'data missing.' Credibility jumped.",
+  out_zh:"數據洞察報告 — 品牌／受眾討論熱度、熱搜關鍵字、Top 10 高流量文章等。",
+  out_en:"An insight report — brand/audience discussion heat, top search keywords, top 10 high-traffic posts, and more.",
+  before_zh:"非資深企劃較不熟悉如何撈數據，多張 Query 需費時聚合，大型提案平均花費 <b>3 天</b>查找。",
+  before_en:"Junior planners weren't sure how to pull the data, and stitching multiple queries took time — big proposals averaged <b>3 days</b> of research.",
+  after_zh:"灌入資深企劃經驗與 Query 統整，輸入品牌需求即可產出洞察報告，僅約 <b>10–15 分鐘</b>；業務也能自行提案，大幅降低指派工作量。",
+  after_en:"Loaded with senior planners' know-how, it turns a brief into a report in <b>~10–15 min</b>. Even sales can self-serve a proposal, taking a real load off the planning team.",
+  impact:{save_zh:"⏱ 省時 99%+",save_en:"⏱ 99%+ time saved",bar:3,bt_zh:"3 天",bt_en:"3 days",at_zh:"10–15 分",at_en:"10–15 min",cut_zh:"省 99%+",cut_en:"99%+ saved"},demo:"https://micron-dcard-insight-dcard.vibehost.space/",preview:"images/demo-micron.png"},
+ {code:"A3",type_zh:"創意型",type_en:"Creative",title_zh:"熱議趨勢預測",title_en:"Trend Forecast",
+  use_zh:"串接 Dcard & 社群平台數據，為品牌提供符合未來趨勢的創意溝通切入點與操作方式。",
+  use_en:"Connects Dcard and social data to hand brands future-facing creative angles and ways to play them.",
+  hi_zh:["<b>雙區間交叉驗證方法論</b>：用「去年同期聲量 × 近期動能」交叉為四象限決定佈局力度","<b>切角產出框架</b>：提供「數據連結型、天馬行空創意型」兩切角"],
+  hi_en:["<b>Dual-period cross-validation</b>: crosses 'same-period-last-year volume × recent momentum' into four quadrants to set effort","<b>Angle framework</b>: two angle types — data-linked and free-creative"],
+  iter_zh:"測試幾檔後發覺 AI 切角了無新意 → 設計兩路思考機制，引導 AI 除了依數據發想，也從「品牌受眾情緒、生活情境、文化脈絡」出發，創造更多溝通可能性。",
+  iter_en:"After a few runs the angles felt stale → built a two-track thinking model, nudging the AI to ideate not just from data but from audience emotion, everyday context, and culture.",
+  out_zh:"數據總覽報告 + 操作切角建議（可產出能直接於 Dcard 發布的文案）。",
+  out_en:"A data overview plus actionable angle suggestions — including copy ready to post on Dcard.",
+  before_zh:"無數據依據、憑經驗猜測趨勢，較難說服品牌為何要如此操作話題。",
+  before_en:"Trends were guessed from gut feel with no data behind them — a hard sell when a brand asks why a topic should be played this way.",
+  after_zh:"產出用數據交叉驗證後的切角建議與可直接貼上的 Dcard 文案，使提案<b>更有底氣</b>、客戶想像更具體。",
+  after_en:"Delivers cross-validated angles and ready-to-post Dcard copy — proposals land with <b>more conviction</b>, and clients can picture it.",
+  impact:{save_zh:"📈 提案更有底氣",save_en:"📈 Data-backed conviction"},demo:"https://samsung-dcard-2026-dcard.vibehost.space/",preview:"images/demo-samsung.png"},
+ {code:"A4",type_zh:"理論型",type_en:"Framework",title_zh:"成功案例分析",title_en:"Success Case Analysis",
+  use_zh:"建立「Dcard 話題公式」，分析競品成功案例以建議品牌溝通切入點與操作方式。",
+  use_en:"Built a 'Dcard topic formula' that breaks winning competitor cases into communication angles and tactics.",
+  hi_zh:["<b>五層黃金公式框架</b>"],
+  hi_en:["<b>Five-layer golden formula framework</b>"],
+  iter_zh:"起初無明確標準評估案例效益 → 先針對過往約 30 檔精彩案例研究，萃取成功元素打造「Dcard 話題黃金公式」。",
+  iter_en:"At first there was no clear yardstick for a case's value → studied ~30 standout past cases and distilled what made them work into the 'Dcard topic golden formula.'",
+  out_zh:"案例分析報告 + 複用於其他提案之建議。",
+  out_en:"A case-analysis report, plus takeaways you can reuse on other proposals.",
+  before_zh:"每檔案例成效、操作亮點<b>無法被經驗傳承</b>，若非執行企劃便較難說明可複製、可教的方法。",
+  before_en:"Each case's results and winning moves <b>couldn't be handed down</b>; anyone who hadn't run it struggled to explain a repeatable, teachable method.",
+  after_zh:"自動撈取指定產業／專案案例，透過「黃金公式」拆解成效，產出可快速複用的操作建議，大幅提升資訊共享性。",
+  after_en:"Auto-pulls cases by industry or project, breaks the results down through the golden formula, and outputs tactics you can reuse fast — a big lift for sharing know-how.",
+  impact:{save_zh:"♻️ 經驗可快速複用",save_en:"♻️ Reusable know-how"},demo:"https://allie-dcard-case-analysis-dcard.vibehost.space/",preview:"images/demo-allie.png"},
+ {code:"A5",type_zh:"商機型",type_en:"Opportunity",title_zh:"話題合作建議",title_en:"Pitch Match",
+  use_zh:"為「中小客戶團隊」重點產業，每週自動媒合相關熱議話題與溝通切點，並提供 Dcard 合作建議。",
+  use_en:"For the SMB team's priority industries, it matches trending topics to angles every week and suggests how Dcard fits in.",
+  hi_zh:["<b>多 Agent 編排流程</b>：由一隻 Agent 自動呼叫另三隻（A1／A3／A4），整合成一份提案","<b>多模式路由</b>：一般查詢版 / Slack 自動化報告，同一隻 Agent 服務多情境"],
+  hi_en:["<b>Multi-agent orchestration</b>: one Agent auto-calls three others (A1/A3/A4), integrating outputs into one proposal","<b>Multi-mode routing</b>: general-query and Slack-automation modes from one Agent"],
+  iter_zh:"為因應每週自動化大量產出需求，不斷優化 Agent prompt 以降低 token 使用與轉速。",
+  iter_en:"To handle heavy weekly automation, I kept tuning the prompts to cut token use and speed it up.",
+  out_zh:"趨勢洞察報告 + 專案合作建議。",
+  out_en:"A trend-insight report plus project collaboration ideas.",
+  before_zh:"CS 完成一份報告需引用多資料源，自行發想建議與切角後手動排版，至少<b>半天到一天</b>。",
+  before_en:"A single CS report meant citing many sources, thinking up angles, and formatting by hand — at least <b>half a day to a full day</b>.",
+  after_zh:"每週<b>被動接收</b>產業商機，主動查詢也僅需 <b>10 分鐘</b>即可產出報告。",
+  after_en:"Industry opportunities <b>land in your inbox weekly</b>; an on-demand query takes just <b>10 min</b> to produce a report.",
+  impact:{save_zh:"⏱ 省時 95%+",save_en:"⏱ 95%+ time saved",bar:4,bt_zh:"半天–1 天",bt_en:"½–1 day",at_zh:"10 分",at_en:"10 min",cut_zh:"省 95%+",cut_en:"95%+ saved"},demo:"https://adgt-pet-proposal-2026-dcard.vibehost.space/",preview:"images/demo-adgt.png"}
+];
+const DEMO="https://dcard-formula-v2-vvn-dcard.vibehost.space/";
+
+const TAKE=[
+ {zh:"輿情掌握從數小時縮到 5–7 分，省時 90%+",en:"Topic monitoring: hours → 5–7 min, 90%+ time saved"},
+ {zh:"撈取數據費時從 3 天壓到 15 分鐘，業務也能自助提案（省時 99%+）",en:"Data research from 3 days to 15 min — sales can self-serve (99%+ saved)"},
+ {zh:"從「憑感覺」操作話題變成數據交叉驗證，客戶更買單",en:"From gut-feel to cross-validated data — clients buy in"},
+ {zh:"把 30 檔成功案例萃取成可複用的<span class=\"ol-term\">「話題黃金公式」</span>",en:"30 winning cases distilled into a reusable <span class=\"ol-term\">\"topic golden formula\"</span>",href:"https://dcard-formula-v2-vvn-dcard.vibehost.space/"},
+ {zh:"多 Agent 自動編排，每週自動媒合產業商機（省時 95%+）",en:"Multi-agent orchestration auto-matches weekly opportunities (95%+ saved)"}
+];
+document.getElementById('agentCards').innerHTML=AGENTS.map((a,i)=>`
+ <div class="acard" data-i="${i}">
+   <div class="acard-head">
+     <div class="acode">${a.code}</div>
+     <div>
+       <div class="typ">${T(a.type_zh,a.type_en)}</div>
+       <div class="ttl-row"><span class="ttl">${T(a.title_zh,a.title_en)}</span>${TAKE[i]?(TAKE[i].href?`<a class="atake atake-link" href="${TAKE[i].href}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${T(TAKE[i].zh,TAKE[i].en)} <span class="ol-cta">${T('開啟公式','Open formula')} ↗</span></a>`:`<span class="atake">${T(TAKE[i].zh,TAKE[i].en)}</span>`):''}</div>
+       <div class="use">${T(a.use_zh,a.use_en)}</div>
+     </div>
+     <div class="toggle">+</div>
+   </div>
+   <div class="acard-body"><div class="abody-in">
+     <div class="block">
+       <h5>🎯 ${T('我的設計亮點','My Design Highlights')}</h5>
+       <ul>${a.hi_zh.map((h,j)=>`<li>${T(h,a.hi_en[j])}</li>`).join('')}</ul>
+       <div class="iter">💡 <b>${T('迭代故事','Iteration story')}</b><br>${T(a.iter_zh,a.iter_en)}</div>
+     </div>
+     <div class="block">
+       <h5>📦 ${T('AI 產出','AI Output')}</h5>
+       <ul><li>${T(a.out_zh,a.out_en)}</li></ul>
+     </div>
+     <div class="ba">
+       <div class="col before"><div class="tag">Before</div><p>${T(a.before_zh,a.before_en)}</p></div>
+       <div class="vs">→</div>
+       <div class="col after">${a.impact?`<div class="ba-impact">${T(a.impact.save_zh,a.impact.save_en)}</div>`:''}<div class="tag">After</div><p>${T(a.after_zh,a.after_en)}</p></div>
+       ${a.impact&&a.impact.bar?`<div class="ba-bar"><div class="bar-row b"><span class="bar-lbl">Before</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">${T(a.impact.bt_zh,a.impact.bt_en)}</span></div><div class="bar-row a"><span class="bar-lbl">After</span><span class="bar-track"><span class="bar-fill" style="width:${a.impact.bar}%"></span><span class="bar-saved" style="left:${a.impact.bar}%;right:0">${T(a.impact.cut_zh,a.impact.cut_en)}</span></span><span class="bar-val">${T(a.impact.at_zh,a.impact.at_en)}</span></div></div>`:''}
+     </div>
+     ${a.preview?`<div class="demo-frame">
+       <div class="demo-bar"><span class="demo-dots"><i style="background:#FF6462"></i><i style="background:#FFE91A"></i><i style="background:#21C4D0"></i></span><span class="demo-url">${a.demo}</span></div>
+       <div class="demo-scroll"><img src="${a.preview}" alt="DEMO preview" loading="lazy"></div>
+       <div class="demo-actions"><span class="hint">${T('↕ 視窗內可上下滾動瀏覽','↕ scroll inside the window')}</span><span style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="${a.demo}" target="_blank">↗ ${T('開啟完整 DEMO','Open live demo')}</a></span></div>
+     </div>`:`<div class="demo-link"><a class="btn btn-primary" href="${a.demo||DEMO}" target="_blank">🚀 ${T('查看 DEMO','View Demo')}</a></div>`}
+   </div></div>
+ </div>`).join('');
+
+document.querySelectorAll('.acard-head').forEach(h=>h.addEventListener('click',()=>{
+  const c=h.parentElement,b=c.querySelector('.acard-body');
+  const open=c.classList.toggle('open');
+  b.style.maxHeight=open?b.scrollHeight+80+'px':0;
+}));
+
+/* ===== agent map hover highlight ===== */
+const map=document.getElementById('agentMap');
+map.querySelectorAll('th.ag').forEach(th=>{
+  const col=th.dataset.col;
+  const cells=()=>map.querySelectorAll(`[data-c="${col}"]`);
+  th.addEventListener('mouseenter',()=>{th.classList.add('hot');cells().forEach(c=>c.classList.add('hot'));});
+  th.addEventListener('mouseleave',()=>{th.classList.remove('hot');cells().forEach(c=>c.classList.remove('hot'));});
+});
+
+/* ===== DATA: brand proposals timeline ===== */
+const PROPOSALS=[
+ {date:"2024.09",name_zh:"雅詩蘭黛集團<span class=\"co\">The Estée Lauder Companies Inc.</span>",name_en:"The Estée Lauder Companies Inc.",
+  thesis_zh:"窗口分散的集團，缺的不是預算，是一個被說服的共同語言",thesis_en:"A group with scattered contacts isn't short on budget — it's short on one shared, convincing story",
+  bg_zh:"因過往各品牌窗口資訊分散，特約一場全集團 media sharing 會議，統一溝通 Dcard 廣告服務。",
+  bg_en:"Brand contacts were scattered, so I set up a group-wide media-sharing session to get everyone on the same page about Dcard's ad services.",
+  role_zh:["<b>策略建議：</b>深挖品牌痛點後與 Dcard 服務連結，精準回應宣傳需求","<b>數據分析：</b>分析 12 品牌討論、搜尋、閱覽聲量，並與競品評比加深品牌有感度"],
+  role_en:["<b>Strategy:</b> dug into each brand's pain points and tied them to Dcard services, answering the real promotion need","<b>Data analysis:</b> analyzed discussion, search, and readership volume across 12 brands and benchmarked them against competitors to make the case land"],
+  redesign:true,hl_ic:"📈",hl_zh:"雅詩蘭黛單檔投資金額 <b>翻倍</b>",hl_en:"Estée Lauder's per-campaign spend <b>doubled</b>",hl_sub_zh:"全集團 2025 投資量大幅提升",hl_sub_en:"Group-wide 2025 investment up sharply",
+  result_zh:"全集團 2025 年投資量大幅提升，「雅詩蘭黛」品牌單檔投資金額<b>翻倍</b>。",
+  result_en:"Group-wide investment jumped in 2025, and the Estée Lauder brand's per-campaign spend <b>doubled</b>.",
+  imgs:[{s:"images/proposal/estee-1.png?v=6",c:"品牌分析 1",e:"Brand analysis 1"},{s:"images/proposal/estee-2.png?v=6",c:"品牌分析 2",e:"Brand analysis 2"},{s:"images/proposal/estee-3.png?v=6",c:"六大解方",e:"Six solutions"},{s:"images/proposal/estee-4.png?v=6",c:"解方詳述",e:"Solutions in detail"}]},
+ {date:"2025.03",name_zh:"萊雅集團<span class=\"co\">L'ORÉAL Taiwan</span>",name_en:"L'ORÉAL Taiwan",
+  thesis_zh:"預算縮減時，我不賣產品，賣一種新的合作彈性",thesis_en:"When budgets shrink, I don't sell a product — I sell a new kind of partnership flexibility",
+  bg_zh:"因應美妝產業整體市場衰退，萊雅集團預算縮減，需提出全新策略以維穩集團投資量。",
+  bg_en:"With the beauty market sliding and L'Oréal cutting budgets, they needed a fresh strategy to hold group investment steady.",
+  role_zh:["<b>策略建議：</b>打破既有專案規範，提出符合品牌需求的全新合作模式；首度提出「野生口碑與官方口碑並存」概念，說服內部放寬合作限制","<b>產品開發：</b>首創「KOD 品牌大使」專案，以「鐵粉行銷」找最合適宣傳者經營口碑，再透過官方資源放大效益"],
+  role_en:["<b>Strategy:</b> broke the usual project rules with a collaboration model built around the brand's needs; first to float 'organic and official word-of-mouth side by side,' winning internal buy-in to loosen the constraints","<b>Product dev:</b> created the 'KOD Brand Ambassador' program — superfan marketing to find the right advocates, then official resources to amplify"],
+  redesign:true,hl_ic:"🤝",hl_zh:"成功售出 <b>2 檔 KOD 專案</b>",hl_en:"Closed <b>2 KOD projects</b>",hl_sub_zh:"展現 Dcard 合作彈性與可能性",hl_sub_en:"Showed how flexible a Dcard partnership can be",
+  result_zh:"成功銷售 <b>2 檔 KOD 專案</b>，充分展現 Dcard 合作彈性與可能性。",
+  result_en:"Closed <b>2 KOD projects</b> — a clear show of how flexible a Dcard partnership can be.",
+  imgs:[{s:"images/proposal/loreal-1.png?v=6",c:"規劃背景",e:"Background"},{s:"images/proposal/loreal-2.png?v=6",c:"專案策略",e:"Project strategy"},{s:"images/proposal/loreal-3.png?v=6",c:"專案資源",e:"Project resources"},{s:"images/proposal/loreal-4.png?v=6",c:"走期安排",e:"Timeline"}]},
+ {date:"2026.01",name_zh:"三星電子<span class=\"co\">Samsung Electronics</span>",name_en:"Samsung Electronics",
+  bg_zh:"三星為 Dcard 3C 產業指標客戶，面臨 2025 預算銳減，急欲於 2026 重建良好合作關係。",
+  bg_en:"Samsung, a flagship 3C client, had slashed its 2025 budget and was keen to rebuild the relationship in 2026.",
+  role_zh:["<b>策略建議：</b>梳理品牌 MOT，以四大策略回應","<b>跨部門整合：</b>向產品、營運、IP、AI 四大部門洽談特殊資源，打造站內外串聯專屬路徑","<b>AI 應用：</b>開發兩隻三星專屬 AI Agent 完成洞察報告","<b>創意發想：</b>推薦 Dcard Video 成員為 S26 新機品牌大使，發想系列合作主題"],
+  role_en:["<b>Strategy:</b> mapped the brand's MOT and answered with four strategies","<b>Cross-functional:</b> secured special resources from the Product, Ops, IP, and AI teams to build a dedicated on- and off-site path","<b>AI:</b> built two Samsung-specific AI Agents to power the insight reports","<b>Creative:</b> pitched Dcard Video members as S26 launch ambassadors, with a series of collaboration themes"],
+  mot:[
+   {p_zh:"想了解年輕人時下熱話題並即時置入產品",p_en:"Wants to know youth trends and place products in real time",s_zh:"Dcard AI 洞察報告即時預測熱議話題並提供操作建議",s_en:"Dcard AI insight reports forecast topics and suggest tactics in real time"},
+   {p_zh:"希望內容被大量年輕人看見、創造原生討論",p_en:"Wants mass youth reach and organic discussion",s_zh:"2026 指標性全站社群活動，使品牌進入年輕族群生活圈",s_en:"2026 flagship site-wide social campaigns embed the brand in youth life"},
+   {p_zh:"想即時有感品牌在 Dcard 的討論熱度",p_en:"Wants to feel brand buzz on Dcard in real time",s_zh:"全站全新版位特開置入，營造品牌熱議氛圍",s_en:"New site-wide placements create a brand-buzz atmosphere"},
+   {p_zh:"想透過 Dcard Video 影響力奠定地位",p_en:"Wants to anchor status via Dcard Video influence",s_zh:"與 Dcard Video 特殊合作，於年輕世代建立品牌認同",s_en:"Special Dcard Video collaboration builds brand identity with youth"}
+  ],
+  thesis_zh:"預算砍半的客戶，要的不是版位，是一條「被年輕人主動討論」的路徑",thesis_en:"A client that just halved its budget doesn't want ad slots — it wants a path to being talked about by Gen Z",
+  redesign:true,hl_zh:"5 個月成案金額 <b>已超過 2025 全年</b>",hl_en:"5-month bookings <b>already topped all of 2025</b>",hl_sub_zh:"重新喚醒品牌合作興趣",hl_sub_en:"Reawakened the brand's interest",
+  result_zh:"重新喚醒品牌合作興趣，<b>5 個月內成案金額已超過 2025 整年度</b>。",
+  result_en:"Reawakened the brand's interest — <b>deals closed in 5 months already topped all of 2025</b>.",
+  imgs:[{s:"images/proposal/samsung-1.png?v=6",c:"AI 簡介",e:"AI overview"},{s:"images/proposal/samsung-2.png?v=6",c:"三星 AI",e:"Samsung AI"},{s:"images/proposal/samsung-3.png?v=7",c:"AI DEMO 1",e:"AI demo 1"},{s:"images/proposal/samsung-5.png?v=6",c:"三大受眾行為",e:"Three audience behaviors"},{s:"images/proposal/samsung-4.png?v=6",c:"搜尋新資源",e:"New search resources"},{s:"images/proposal/samsung-6.png?v=6",c:"瀏覽新資源",e:"New browse resources"}]},
+ {date:"2026.05",name_zh:"SK-II<span class=\"co\">P&amp;G Taiwan</span>",name_en:"SK-II",
+  thesis_zh:"續約的關鍵，不是做得多好，而是讓對方「看得見」好在哪",thesis_en:"Renewal isn't about how well it worked — it's about making the value impossible to miss",
+  bg_zh:"SK-II 為美妝保養產業指標客戶，既兩年破千萬年約後，想了解合作成效以續簽 2026–2027 年約。",
+  bg_en:"SK-II, a flagship beauty client two years into NT$10M+ annual contracts, wanted to see the results before renewing for 2026–2027.",
+  role_zh:["<b>數據分析 & 策略說服：</b>產出三份成效報告，分別以不同邏輯解讀數據","將數據細化至「每日」分析，從微觀變化回推成效","拆分波段，以「不重複搜尋人數 vs 人均搜尋次數」雙數據證明廣度 & 深度","直接追蹤品牌廣告互動者後續行為，透過競品數據凸顯投資效益"],
+  role_en:["<b>Data analysis & persuasion:</b> produced three reports, each reading the data through a different lens","drilled down to <b>daily</b> analysis, reading results back from the small movements","split it by wave, using 'unique searchers vs. searches per person' to prove both breadth and depth","tracked what ad-engagers did next, using competitor data to spotlight the return"],
+  reports:true,status:true,hl_zh:"提案進行中，爭取 <b>2026–2027 續約</b>",hl_en:"In progress — pitching the <b>2026–2027 renewal</b>",hl_sub_zh:"以三份成效報告證明投資效益",hl_sub_en:"Three performance reports proving ROI",
+  result_zh:"提案進行中，尚未回收具體成果。",
+  result_en:"Proposal still in progress — results to come.",
+  imgs:[{s:"images/proposal/skii-1.png?v=6",c:"搜尋分析",e:"Search analysis"},{s:"images/proposal/skii-2.png?v=6",c:"長尾分析",e:"Long-tail analysis"},{s:"images/proposal/skii-3.png?v=6",c:"Dcard 美妝版流量分析",e:"Dcard Makeup-board traffic analysis"},{s:"images/proposal/skii-4.png?v=7",c:"波段操作成效分析",e:"Wave performance analysis"},{s:"images/proposal/skii-5.png?v=6",c:"受眾閱覽滲透率分析",e:"Audience reach & penetration analysis"},{s:"images/proposal/skii-6.png?v=6",c:"熱搜詞資源分析",e:"Top-search keyword analysis"}]}
+];
+function tlHeadHl(p){if(!p.hl_zh)return'';const ic=p.reports?'⏳':(p.hl_ic||'📈');return `<div class="tbox-hl">${ic} <b>${T(p.hl_zh,p.hl_en)}</b>${p.hl_sub_zh?`<span class="hl-sub">· ${T(p.hl_sub_zh,p.hl_sub_en)}</span>`:''}</div>`;}
+function tlGal(p){if(!(p.imgs&&p.imgs.length))return'';const slides=p.imgs.map(o=>({s:o.s,cap:T(o.c,o.e||o.c),alt:'proposal slide'}));return `<div class="deckwrap"><div class="deck-lbl">📑 ${T('提案畫面（客戶機密已模糊處理）','Proposal slides (confidential parts blurred)')}</div>${deckStrip(slides)}</div>`;}
+function tlBody(p){
+  if(p.reports){
+    return `<h5 class="tl-h5">${T('我的角色','My Role')}</h5>
+     <p class="tl-intro">${T(p.role_zh[0],p.role_en[0])}</p>
+     <h5 class="tl-h5" style="margin-top:18px">${T('三份成效報告','Three Performance Reports')}</h5>
+     <div class="rpt-grid">${p.role_zh.slice(1).map((r,j)=>`<div class="rpt-card"><div class="rpt-no">${['①','②','③','④','⑤'][j]}</div><p>${T(r,p.role_en[j+1])}</p></div>`).join('')}</div>
+     ${tlGal(p)}`;
+  }
+  if(p.redesign){
+    return `<h5 class="tl-h5">${T('我的角色','My Role')}</h5><ul class="tl-role">${p.role_zh.map((r,j)=>`<li>${T(r,p.role_en[j])}</li>`).join('')}</ul>
+     ${p.mot?`<h5 class="tl-h5" style="margin-top:20px">${T('四大策略對應 (MOT)','Four-Strategy Response (MOT)')}</h5><div class="mot2">${p.mot.map(m=>`<div class="mot2-card"><div class="mot2-pain"><span class="mot2-tag">${T('痛點','Pain')}</span><span>${T(m.p_zh,m.p_en)}</span></div><div class="mot2-arr">↓</div><div class="mot2-sol"><span class="mot2-tag sol">Dcard</span><span>${T(m.s_zh,m.s_en)}</span></div></div>`).join('')}</div>`:''}
+     ${tlGal(p)}`;
+  }
+  return `<h5 style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-600);font-weight:800;margin:10px 0 8px">${T('我的角色','My Role')}</h5>
+     <ul style="margin:0;padding-left:18px;font-size:13.8px;color:var(--gray)">${p.role_zh.map((r,j)=>`<li style="margin-bottom:7px">${T(r,p.role_en[j])}</li>`).join('')}</ul>
+     ${p.mot?`<h5 style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);font-weight:800;margin:16px 0 8px">${T('四大策略對應 (MOT)','Four-Strategy Response (MOT)')}</h5><div class="mot">${p.mot.map(m=>`<div class="row"><div class="pain">${T(m.p_zh,m.p_en)}</div><div class="ar">→</div><div class="sol">${T(m.s_zh,m.s_en)}</div></div>`).join('')}</div>`:''}
+     <div class="result"><div class="tag">${T('成果','Result')}</div><p>${T(p.result_zh,p.result_en)}</p></div>
+     ${tlGal(p)}`;
+}
+document.getElementById('timeline').innerHTML=PROPOSALS.map((p,i)=>`
+ <div class="tnode"><div class="tbox" data-i="${i}">
+   <div class="tbox-head">
+     <span class="date">${p.date}</span>
+     <div>${p.thesis_zh?`<div class="tbox-thesis">${T(p.thesis_zh,p.thesis_en)}</div>`:''}<div class="bn">${T(p.name_zh,p.name_en)}</div><div class="bg-">${T(p.bg_zh,p.bg_en)}</div>${tlHeadHl(p)}</div>
+     <div class="toggle">+</div>
+   </div>
+   <div class="tbox-body"><div class="tbody-in">
+     ${tlBody(p)}
+   </div></div>
+ </div></div>`).join('');
+document.querySelectorAll('.tbox-head').forEach(h=>h.addEventListener('click',()=>{
+  const c=h.parentElement,b=c.querySelector('.tbox-body');
+  const open=c.classList.toggle('open');
+  b.style.maxHeight=open?b.scrollHeight+40+'px':0;
+}));
+
+/* ===== DATA: collaborations ===== */
+const COLLAB=[
+ {cat:"wom",cat_zh:"口碑",cat_en:"Word-of-mouth",brand:"ALLIE",img:"images/品牌合作圖片/ALLIE.png",
+  deck:{zh:"心測四大結果頁",en:"4 quiz result pages",portrait:true,imgs:["images/品牌合作圖片/ALLIE補充圖片/結果1.jpg","images/品牌合作圖片/ALLIE補充圖片/結果2.jpg","images/品牌合作圖片/ALLIE補充圖片/結果3.jpg","images/品牌合作圖片/ALLIE補充圖片/結果4.jpg"]},
+  title_zh:"解密戀愛吸引力 × MBTI 心理測驗",title_en:"Decode Romance × MBTI Quiz",
+  desc_zh:"設計命中「戀愛焦慮 × 自我探索 × 功能需求」三情緒交叉點的心理測驗，搭配徵文活動自然擴散 ALLIE 4 款防曬乳資訊。",
+  desc_en:"A quiz landing right where dating anxiety, self-discovery, and practical need meet — paired with a writing campaign to spread the word on ALLIE's four sunscreens, naturally.",
+  metrics_zh:["瀏覽 3.5萬+","遊玩 2.7萬+","分享 730+","品牌討論/搜尋 +125%"],
+  metrics_en:["35k+ views","27k+ plays","730+ shares","brand buzz/search +125%"],
+  links:[["徵文活動","Campaign","https://www.dcard.tw/f/girl/p/259320156"],["心理測驗","Quiz","https://ooopenlab.cc/preview/gOzcb36QAUIwsDApueK9"]]},
+ {cat:"video",cat_zh:"影音",cat_en:"Video",brand:"D+AF",yt:"1LWOWklTVtA",
+  deck:{zh:"影片畫面精選",en:"Video stills",imgs:["images/品牌合作圖片/DAF補充圖片/daf-1.jpg","images/品牌合作圖片/DAF補充圖片/daf-2.jpg","images/品牌合作圖片/DAF補充圖片/daf-3.jpg","images/品牌合作圖片/DAF補充圖片/daf-4.jpg","images/品牌合作圖片/DAF補充圖片/daf-5.jpg","images/品牌合作圖片/DAF補充圖片/daf-6.jpg","images/品牌合作圖片/DAF補充圖片/daf-7.jpg","images/品牌合作圖片/DAF補充圖片/daf-8.jpg","images/品牌合作圖片/DAF補充圖片/daf-9.jpg","images/品牌合作圖片/DAF補充圖片/daf-10.jpg"]},
+  title_zh:"Dcard Video「主委」& 女友一日放閃計劃",title_en:"Dcard Video Host & His Girlfriend's Big Date",
+  desc_zh:"邀請人氣成員 Rio 擔任戀愛導師，與主委安排與女友的約會行程，在多元情境置入 D+AF 秋冬鞋款。",
+  desc_en:"Fan-favorite Rio plays love coach, helping the host plan a date with his girlfriend — slipping D+AF's fall/winter shoes into each scene.",
+  metrics_zh:["觀看 61.8萬+","YT 頻道 6 年第 2 名","最短破 30萬觀看"],
+  metrics_en:["618k+ views","#2 in channel's 6 yrs","fastest to 300k views"],
+  links:[["看影片","Watch","https://www.youtube.com/watch?v=1LWOWklTVtA"]]},
+ {cat:"video",cat_zh:"影音",cat_en:"Video",brand:"ROYAL CANIN",yt:"6WvqFqiaqLc",
+  deck:{zh:"影片畫面精選",en:"Video stills",imgs:["images/品牌合作圖片/法國皇家補充圖片/royal-1.jpg","images/品牌合作圖片/法國皇家補充圖片/royal-2.jpg","images/品牌合作圖片/法國皇家補充圖片/royal-3.jpg","images/品牌合作圖片/法國皇家補充圖片/royal-4.jpg","images/品牌合作圖片/法國皇家補充圖片/royal-5.jpg","images/品牌合作圖片/法國皇家補充圖片/royal-6.jpg"]},
+  title_zh:"法國皇家「幼寵養育」搶答大賽",title_en:"Royal Canin Puppy/Kitten Care Quiz Show",
+  desc_zh:"網路調查卡友對「幼寵養育」的疑惑，邀 3 位 Dcard Video 成員與同事帶寵物出演，以趣味搶答賽搭配獸醫師解惑，寓教於樂傳達正確養育知識。",
+  desc_en:"We surveyed users on their puppy- and kitten-care questions, then put 3 Dcard Video members and colleagues — and their pets — in a playful quiz show with a vet on hand. Edutainment that gets the facts right.",
+  metrics_zh:["寓教於樂","專業獸醫師解惑"],
+  metrics_en:["edutainment format","vet-backed answers"],
+  links:[["事前調查","Survey","https://www.dcard.tw/f/pet/p/255565763"],["看影片","Watch","https://www.youtube.com/watch?v=6WvqFqiaqLc"]]},
+ {cat:"event",cat_zh:"實體活動",cat_en:"Live Event",brand:"NARS",img:"images/品牌合作圖片/NARS.jpg",
+  deck:{zh:"活動現場",en:"On-site moments",imgs:["images/品牌合作圖片/NARS補充圖片/_DSC4291.jpg","images/品牌合作圖片/NARS補充圖片/_DSC4339.jpg","images/品牌合作圖片/NARS補充圖片/_DSC4403.jpg","images/品牌合作圖片/NARS補充圖片/_DSC4412.jpg"]},
+  title_zh:"底妝 × 玩轉光影攝影工作坊",title_en:"Base Makeup × Light & Shadow Photo Workshop",
+  desc_zh:"招募 35+ 位創作者與卡友，在彩妝老師帶領下體驗 NARS「以手上妝」哲學，並邀短影音創作者「姍咚」教學光影攝影，拍出自帶光芒的產品妝效。",
+  desc_en:"Brought 35+ creators and users together to try NARS' 'apply with your hands' philosophy with a makeup artist, then learn light-and-shadow photography from short-video creator Shan-dong — for shots that make the makeup glow.",
+  metrics_zh:["35+ 創作者參與","實作體驗"],
+  metrics_en:["35+ creators joined","hands-on experience"],
+  links:[["花絮文章","Recap","https://www.dcard.tw/f/makeup/p/255113207"]]}
+];
+const ICONS={wom:"💬",video:"🎬",event:"🎉"};
+const hlNum=s=>s.replace(/([#＃]?[+＋]?\d[\d.,]*\s?(?:萬|億|千|次|人|名|年|[kKmM])?[%％]?[+＋]?)/g,'<b>$1</b>');
+function collabMedia(c){
+ const kind=`<div class="kind">${T(c.cat_zh,c.cat_en)}</div>`;
+ // 影片：封面為 YT 播放縮圖
+ if(c.yt) return `<div class="pthumb"><img src="https://img.youtube.com/vi/${c.yt}/hqdefault.jpg" alt="${c.brand}">${kind}<a class="play" href="https://www.youtube.com/watch?v=${c.yt}" target="_blank" rel="noopener" aria-label="在 YouTube 觀看 / Watch on YouTube"><span>▶</span></a></div>`;
+ // 其他：單張封面（補充圖放下方橫向幻燈片）
+ if(c.img) return `<div class="pthumb"><img src="${c.img}" alt="${c.brand}">${kind}</div>`;
+ return `<div class="pthumb noimg">${ICONS[c.cat]}${kind}</div>`;
+}
+function deckStrip(slides,portrait){
+ return `<div class="deck-scroll${portrait?' portrait':''}">${slides.map(o=>`<figure class="dfig"><button type="button" class="dslide zoom" data-full="${o.s}" aria-label="放大圖片"><img src="${o.s}" alt="${o.alt||''}" loading="lazy"></button>${o.cap?`<figcaption class="dcap">${o.cap}</figcaption>`:''}</figure>`).join('')}</div>`;
+}
+/* 品牌卡片 deck：收合、點擊展開 */
+function renderDeck(c){
+ const d=c.deck,icon=c.yt?'🎬':'📸';
+ const slides=d.imgs.map(s=>({s,alt:c.brand}));
+ return `<details class="deckx"><summary class="deck-lbl">${icon} ${T(d.zh,d.en)}<span class="cx-n">${d.imgs.length}</span><span class="dx-ar">+</span></summary>${deckStrip(slides,d.portrait)}</details>`;
+}
+document.getElementById('collabGrid').innerHTML=COLLAB.map(c=>{
+ return `<div class="pcard" data-cat="${c.cat}">
+   ${collabMedia(c)}
+   <div class="pcard-in">
+     <div class="pb">${c.brand}</div>
+     <h4>${T(c.title_zh,c.title_en)}</h4>
+     <p>${T(c.desc_zh,c.desc_en)}</p>
+     <div class="pm">${c.metrics_zh.map((m,j)=>`<span>${T(hlNum(m),hlNum(c.metrics_en[j]))}</span>`).join('')}</div>
+     <div class="links">${c.links.map(l=>`<a class="extlink" href="${l[2]}" target="_blank">${T(l[0],l[1])}</a>`).join('')}</div>
+     ${c.deck?renderDeck(c):''}
+   </div>
+ </div>`;
+}).join('');
+/* collab 輪播 */
+document.querySelectorAll('#collabGrid .carousel').forEach(car=>{
+  const track=car.querySelector('.cslides'),n=track.children.length,dots=car.querySelectorAll('.cdot'),cnt=car.querySelector('.ccount b');
+  let idx=0;
+  const go=i=>{idx=(i+n)%n;track.style.transform=`translateX(${-idx*100}%)`;dots.forEach((d,j)=>d.classList.toggle('on',j===idx));if(cnt)cnt.textContent=idx+1;};
+  const prev=car.querySelector('.carr.prev'),next=car.querySelector('.carr.next');
+  if(prev)prev.addEventListener('click',e=>{e.stopPropagation();go(idx-1);});
+  if(next)next.addEventListener('click',e=>{e.stopPropagation();go(idx+1);});
+  dots.forEach((d,j)=>d.addEventListener('click',e=>{e.stopPropagation();go(j);}));
+  let sx=null;
+  car.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX;},{passive:true});
+  car.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>40)go(idx+(dx<0?1:-1));},{passive:true});
+});
+/* 幻燈片：滑鼠拖曳左右捲動（觸控／觸控板為原生捲動）*/
+function initDeckDrag(){
+ document.querySelectorAll('.deck-scroll:not([data-drag]),.ccard-gallery:not([data-drag])').forEach(sc=>{
+  sc.dataset.drag=1;
+  let down=false,sx=0,sl=0,moved=false;
+  sc.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=sc.scrollLeft;sc.classList.add('drag');});
+  sc.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-sx;if(Math.abs(dx)>6)moved=true;sc.scrollLeft=sl-dx;});
+  const end=()=>{down=false;sc.classList.remove('drag');};
+  sc.addEventListener('pointerup',end);sc.addEventListener('pointerleave',end);
+  sc.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();}},true);
+ });
+}
+initDeckDrag();
+/* tabs filter */
+document.querySelectorAll('#collabTabs .tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('#collabTabs .tab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  const f=t.dataset.f;
+  document.querySelectorAll('#collabGrid .pcard').forEach(c=>{
+    c.classList.toggle('hide',!(f==='all'||c.dataset.cat===f));
+  });
+}));
+
+/* ===== language toggle ===== */
+const langBtn=document.getElementById('langBtn');
+langBtn.addEventListener('click',()=>{
+  const en=document.body.dataset.lang!=='en';
+  document.body.dataset.lang=en?'en':'zh';
+  document.documentElement.lang=en?'en':'zh-Hant';
+  langBtn.textContent=en?'中':'EN';
+  document.querySelectorAll('.acard.open .acard-body,.tbox.open .tbox-body').forEach(b=>{
+    b.style.maxHeight=b.scrollHeight+80+'px';
+  });
+});
+
+/* ===== count up ===== */
+function animateCount(el){
+  const target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0);
+  let steps=48,n=0;
+  const fmt=v=>dec?v.toFixed(dec):Math.round(v).toLocaleString();
+  const tick=()=>{n++;const v=n>=steps?target:target*n/steps;el.textContent=fmt(v);if(n<steps)requestAnimationFrame(tick);};
+  tick();
+}
+/* ===== reveal + counters via IntersectionObserver ===== */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+let counted=false;
+const statObs=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting&&!counted){counted=true;document.querySelectorAll('[data-count]').forEach(animateCount);}});
+},{threshold:.4});
+statObs.observe(document.querySelector('.stat-row'));
+
+/* ===== Sales Kit 內頁 gallery（標題=檔名，無編號）===== */
+const SALESKIT=[
+ ["images/saleskit/saleskit-1.png","Dcard 媒體定位","Dcard's media positioning"],
+ ["images/saleskit/saleskit-2.png","AI 世代下 Dcard 影響力","Dcard's influence in the AI era"],
+ ["images/saleskit/saleskit-3.png","Dcard 轉型目標","Dcard's transformation goals"],
+ ["images/saleskit/saleskit-4.png","Dcard 影響消費決策原因","Why Dcard shapes purchase decisions"],
+ ["images/saleskit/saleskit-5.png","Dcard 廣告生態圈","Dcard ad ecosystem"],
+ ["images/saleskit/saleskit-6.png","「人群」策略","The \"audience\" strategy"],
+ ["images/saleskit/saleskit-7.png","「場域」現況","The \"space\" landscape today"],
+ ["images/saleskit/saleskit-8.png","Dcard Video 簡介","Dcard Video overview"],
+ ["images/saleskit/saleskit-9.png","「話題」佈局","The \"topic\" play"],
+ ["images/saleskit/saleskit-10.png","「轉換」策略","The \"conversion\" strategy"],
+ ["images/saleskit/saleskit-11.png","Dcard 廣告生態圈舉例","The ad ecosystem in action"],
+ ["images/saleskit/saleskit-12.png","Dcard 六大策略解方","Six strategic solutions"],
+ ["images/saleskit/saleskit-13.png","「口碑」產品簡介","Word-of-mouth products"],
+ ["images/saleskit/saleskit-14.png","「影音」產品簡介","Video products"],
+ ["images/saleskit/saleskit-15.png","「實體活動」產品簡介","Live-event products"],
+ ["images/saleskit/saleskit-16.png","其他產品簡介","Other products"],
+ ["images/saleskit/saleskit-17.png","Dcard 會員輪廓","Dcard member profile"],
+ ["images/saleskit/saleskit-18.png","Dcard x Google 熱搜","Dcard × Google top searches"]
+];
+/* ===== 消費潛力報告 gallery（標題=檔名，無編號）===== */
+const CONSUMER=[
+ ["images/consumer/consumer-1.png","不同職業之消費偏好","Spending preferences by occupation"],
+ ["images/consumer/consumer-2.png","「需求認知」階段影響力","Influence at the \"need awareness\" stage"],
+ ["images/consumer/consumer-3.png","「購物決策」階段影響力","Influence at the \"purchase decision\" stage"],
+ ["images/consumer/consumer-4.png","品牌受眾溝通策略","Brand–audience communication strategy"],
+ ["images/consumer/consumer-5.png","Dcard 決策黃金戰場","Dcard, the golden battleground for decisions"],
+ ["images/consumer/consumer-6.png","高決策門檻產業策略","Strategy for high-consideration industries"],
+ ["images/consumer/consumer-7.png","高趨勢／生活風格產業策略","Strategy for trend & lifestyle industries"],
+ ["images/consumer/consumer-8.png","高價值產業策略","Strategy for high-value industries"]
+];
+
+/* 收合式圖庫：預設收起，點標題列展開 */
+function renderGallery(el,icon,zh,en,items,alt){
+  if(!el) return;
+  const slides=items.map(([s,cz,ce])=>({s,cap:T(cz,ce||cz),alt:cz}));
+  el.innerHTML=`<div class="deckwrap"><div class="deck-lbl">${icon} ${T(zh,en)}<span class="cx-n">${items.length}</span></div>${deckStrip(slides)}</div>`;
+}
+renderGallery(document.getElementById('salesKitGal'),'📑','Sales Kit 內頁','Sales Kit pages',SALESKIT,'放大 Sales Kit 內頁');
+renderGallery(document.getElementById('consumerGal'),'📊','報告內頁','Report pages',CONSUMER,'放大消費潛力報告內頁');
+initDeckDrag();
+
+/* ===== lightbox（圖片放大 + 同組左右換頁）===== */
+const lb=document.getElementById('lightbox'),lbimg=document.getElementById('lbimg'),
+      lbPrev=document.getElementById('lbPrev'),lbNext=document.getElementById('lbNext'),
+      lbCount=document.getElementById('lbCount');
+let lbGroup=[],lbIdx=0;
+function showLB(i){
+  if(!lbGroup.length)return;
+  lbIdx=(i+lbGroup.length)%lbGroup.length;
+  const el=lbGroup[lbIdx],img=el.querySelector('img');
+  lbimg.src=el.dataset.full;lbimg.alt=img?img.alt:'';
+  const multi=lbGroup.length>1;
+  lbPrev.hidden=lbNext.hidden=!multi;
+  lbCount.textContent=multi?`${lbIdx+1} / ${lbGroup.length}`:'';
+}
+function openLB(el){
+  const box=el.closest('.pgal-grid, .ccard, .cslides, .deck-scroll');
+  lbGroup=(box?Array.from(box.querySelectorAll('.zoom')):[el]).filter(x=>x.dataset.full);
+  const s=lbGroup.indexOf(el);
+  showLB(s<0?0:s);
+  lb.classList.add('on');lb.setAttribute('aria-hidden','false');
+}
+function closeLB(){lb.classList.remove('on');lb.setAttribute('aria-hidden','true');lbimg.removeAttribute('src');lbGroup=[];}
+document.querySelectorAll('.zoom').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.full)openLB(b);}));
+lbPrev.addEventListener('click',e=>{e.stopPropagation();showLB(lbIdx-1);});
+lbNext.addEventListener('click',e=>{e.stopPropagation();showLB(lbIdx+1);});
+lbimg.addEventListener('click',e=>e.stopPropagation());
+lb.addEventListener('click',closeLB);
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')closeLB();
+  else if(e.key==='ArrowLeft')showLB(lbIdx-1);
+  else if(e.key==='ArrowRight')showLB(lbIdx+1);
+});
+let lbTouchX=null;
+lb.addEventListener('touchstart',e=>{lbTouchX=e.changedTouches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(lbTouchX===null)return;
+  const dx=e.changedTouches[0].clientX-lbTouchX;lbTouchX=null;
+  if(Math.abs(dx)>45)showLB(lbIdx+(dx<0?1:-1));
+},{passive:true});
+
+/* ===== 中文 ↔ 英文／數字 自動補半形空格（盤古之白）===== */
+(function autoSpace(){
+  const CJK='\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff';
+  const reA=new RegExp('(['+CJK+'])([A-Za-z0-9])','g');   // 中文 → 英數
+  const reB=new RegExp('([A-Za-z0-9])(['+CJK+'])','g');   // 英數 → 中文
+  const skip={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1};
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+    acceptNode:n=>(n.parentNode&&skip[n.parentNode.nodeName])?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT
+  });
+  const nodes=[];let cur;while(cur=w.nextNode())nodes.push(cur);
+  nodes.forEach(n=>{
+    const t=n.nodeValue,s=t.replace(reA,'$1 $2').replace(reB,'$1 $2');
+    if(s!==t)n.nodeValue=s;
+  });
+})();
+</script>
+</body>
+</html>
