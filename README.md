@@ -1,6 +1,9 @@
-# 作品集網站 · 維護說明
+# 作品集網站 · 說明書 (Spec / 維護說明)
 
 > 給未來的你:這份文件說明「網站是哪個檔、怎麼改、怎麼重新上線」。不需要工程背景,照著做就行。
+>
+> **這份文件也可以整份貼給任何 AI**,它就能秒懂你的網站、幫你改得更準。
+> 只想快速改東西 → 看 `如何改網頁.md`(內含「貼給 AI 的範本」)。
 
 ---
 
@@ -27,7 +30,7 @@
 這個檔是「單一自包含 HTML」,可以貼給**任何 AI**(Claude.ai、ChatGPT 都行):
 > 把 `index-styleA.html` 全部內容貼進去 →「幫我把 XX 改成 YY,回傳完整檔案」→ 把結果貼回 GitHub 覆蓋、Commit。
 
-**不限定 Claude Code。**
+**不限定 Claude Code。** 現成的「貼給 AI 的範本」放在 `如何改網頁.md`,複製來套用即可。
 
 ---
 
@@ -39,7 +42,7 @@
 |---|---|
 | 開場大標語(金句) | `class="tagline"` |
 | 職稱(Senior Marketing…) | `class="role"` |
-| Hero 六張數字卡 | `class="stat-row"` |
+| Hero 五張數字卡 | `class="stat-row"` |
 | Email / 電話 / LinkedIn | `vivienen0610` |
 | **履歷下載連結** | `Vivien-Hsu-CV.pdf`(見第 5 節) |
 | 簡介的合作夥伴推薦語 | `Partner testimonials` |
@@ -58,18 +61,24 @@
 
 ---
 
-## 4. 怎麼重新上線?(GitHub + Netlify 自動部署)
+## 4. 怎麼重新上線?(已設定好自動部署)
 
-一次性設定好後,**以後只要 push 就自動更新**:
+**設定已完成(2026/7):**
+- GitHub repo:`github.com/vivienen0610/Vivien`(branch `main`)
+- Netlify 站 `ubiquitous-crostata-bd1d44` 已連動這個 repo。
+- **只要 push 到 GitHub,Netlify 就自動重建、上線,網址不變**(約 1 分鐘)。
 
-1. 在 GitHub 建一個 repo,把整個專案推上去。
-2. 到 [Netlify](https://app.netlify.com) → Add new site → Import from Git → 選這個 repo。
-3. Netlify 會自動讀 `netlify.toml`(已設定好:打包 `deploy/`、發佈),直接按部署。
-4. 之後**每次在 GitHub Commit,網站自動重建上線**,網址不變。
+**更新網站的固定流程:**
+1. 改好 `index-styleA.html`(在電腦上用編輯器,或直接在 GitHub 網頁上改)
+2. 若在電腦上改:打開 **GitHub Desktop** → 填一句說明 → **Commit** → 按 **Push origin**
+   (若直接在 GitHub 網頁改:按 **Commit changes** 即可,這步就等於 push)
+3. Netlify 自動偵測 → 重建 → 上線 ✅
 
 > 原理:`build.sh` 會把 `index-styleA.html` 複製成 `deploy/index.html` 並帶上圖片,Netlify 發佈 `deploy/` 資料夾。你完全不用管這步,Netlify 自動做。
 
-**手動打包(若要本機測或拖拉上傳):** 終端機執行 `bash build.sh`,產出 `deploy/` 資料夾,拖到 https://app.netlify.com/drop 也可。
+> ⚠️ 上傳一律走 **GitHub(Push / Commit)**。**不要**再用「拖曳 `deploy/` 到 Netlify」的舊方法,會跟自動部署打架。
+>
+> 💡 電腦的「指令列 git」目前沒有存 GitHub 憑證,所以上傳那一下要用 **GitHub Desktop** 按 Push(它登入後就記得帳號了)。
 
 ---
 
