@@ -1448,7 +1448,7 @@ const CONSUMER=[
 function renderGallery(el,icon,zh,en,items,alt){
   if(!el) return;
   const slides=items.map(([s,cz,ce])=>({s,cap:T(cz,ce||cz),alt:cz}));
-  el.innerHTML=`<div class="deckwrap"><div class="deck-lbl">${icon} ${T(zh,en)}<span class="cx-n">${items.length}</span></div>${deckStrip(slides)}</div>`;
+  el.innerHTML=`<details class="deckx"><summary class="deck-lbl">${icon} ${T(zh,en)}<span class="cx-n">${items.length}</span><span class="dx-ar">+</span></summary>${deckStrip(slides)}</details>`;
 }
 renderGallery(document.getElementById('salesKitGal'),'📑','Sales Kit 內頁','Sales Kit pages',SALESKIT,'放大 Sales Kit 內頁');
 renderGallery(document.getElementById('consumerGal'),'📊','報告內頁','Report pages',CONSUMER,'放大消費潛力報告內頁');
