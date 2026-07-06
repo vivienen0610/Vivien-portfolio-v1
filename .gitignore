@@ -1,2 +1,5 @@
 .DS_Store
 deploy/
+# 個人證件，切勿發佈
+Dcard.id.8262-original.jpg
+*.id.*-original.jpg
